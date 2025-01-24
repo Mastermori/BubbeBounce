@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d284tnwpobnj4"]
+[gd_scene load_steps=6 format=3 uid="uid://d284tnwpobnj4"]
 
-[ext_resource type="Script" uid="uid://m3pcsmljt22v" path="res://player/PlayerController.gd" id="1_uf0uw"]
+[ext_resource type="Script" uid="uid://m3pcsmljt22v" path="res://CollisionColor.gd" id="1_uf0uw"]
+[ext_resource type="PackedScene" uid="uid://byedupy74niwm" path="res://player/bubble_gun/bubble_gun.tscn" id="2_rkbax"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_x4av3"]
 
@@ -10,6 +11,9 @@
 material = SubResource("StandardMaterial3D_3mqji")
 
 [node name="RigidBody3D" type="RigidBody3D" node_paths=PackedStringArray("mesh")]
+collision_layer = 2
+collision_mask = 5
+gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 10000
 script = ExtResource("1_uf0uw")
@@ -22,3 +26,9 @@ debug_fill = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
 mesh = SubResource("SphereMesh_rpqi1")
+
+[node name="BubbleGun" parent="." instance=ExtResource("2_rkbax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465172, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.994609, 0.103695, 0, -0.103695, 0.994609, 0, 0.301776, 4.27537)

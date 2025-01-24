@@ -29,4 +29,6 @@ func get_mouse_direction() -> Vector2:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot_bubble"):
 		var bubble: Bubble = bubble_scene.instantiate()
+		Globals.current_level.bubbles.add_child(bubble)
+		bubble.global_position = global_position
 		bubble.init_shoot(get_mouse_direction())

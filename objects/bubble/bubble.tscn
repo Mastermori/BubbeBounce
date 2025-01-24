@@ -6,9 +6,9 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5qxx4"]
 render_priority = 0
 shader = ExtResource("1_no3pi")
-shader_parameter/fuwafuwa_speed = 1.5
-shader_parameter/fuwafuwa_size = 0.05
-shader_parameter/outline_color = Color(0.45, 0.7, 1, 1)
+shader_parameter/fuwafuwa_speed = 2.0
+shader_parameter/fuwafuwa_size = 0.02
+shader_parameter/outline_color = Color(0.6, 0.78, 1, 1)
 shader_parameter/outline_ratio = 1.0
 shader_parameter/noise_speed = 0.2
 shader_parameter/noise_scale = 0.5
@@ -17,7 +17,7 @@ shader_parameter/noise_scale = 0.5
 material = SubResource("ShaderMaterial_5qxx4")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_no3pi"]
-radius = 0.1
+radius = 0.25
 
 [node name="Bubble" type="Area3D"]
 collision_layer = 0
@@ -32,8 +32,13 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
 shape = SubResource("SphereShape3D_no3pi")
+disabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_no3pi")
 
+[node name="FadeTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="FadeTimer" to="." method="_fade_out"]

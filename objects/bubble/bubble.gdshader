@@ -7,6 +7,8 @@
 
 shader_type spatial;
 
+instance uniform float alpha_multipler : hint_range(0.0, 1.0) = 1.0;
+
 uniform float fuwafuwa_speed = 1.5;
 uniform float fuwafuwa_size = 0.05;
 
@@ -45,5 +47,5 @@ void fragment( )
 	vec3 color = hsv2rgb( outline_alpha - 1.5 + noise_speed * TIME, 1.0, 1.0 ) * noise_scale;
 
 	ALBEDO = mix( color, outline_color.rgb, max( outline_alpha - 0.3, 0.0 ) );
-	ALPHA = outline_color.a * outline_alpha;
+	ALPHA = outline_color.a * outline_alpha * alpha_multipler;
 }
