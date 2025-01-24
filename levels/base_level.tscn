@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cscpcll7v3oqy"]
+[gd_scene load_steps=6 format=3 uid="uid://cscpcll7v3oqy"]
 
+[ext_resource type="Script" uid="uid://kpysvafv4nea" path="res://levels/level.gd" id="1_ew5uy"]
 [ext_resource type="PackedScene" uid="uid://d284tnwpobnj4" path="res://player/player.tscn" id="1_wevqg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_80vhd"]
@@ -15,13 +16,8 @@ sky = SubResource("Sky_hjsbj")
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="BoxMesh" id="BoxMesh_wevqg"]
-size = Vector3(3.05, 1, 1)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ew5uy"]
-data = PackedVector3Array(-1.525, 0.5, 0.5, 1.525, 0.5, 0.5, -1.525, -0.5, 0.5, 1.525, 0.5, 0.5, 1.525, -0.5, 0.5, -1.525, -0.5, 0.5, 1.525, 0.5, -0.5, -1.525, 0.5, -0.5, 1.525, -0.5, -0.5, -1.525, 0.5, -0.5, -1.525, -0.5, -0.5, 1.525, -0.5, -0.5, 1.525, 0.5, 0.5, 1.525, 0.5, -0.5, 1.525, -0.5, 0.5, 1.525, 0.5, -0.5, 1.525, -0.5, -0.5, 1.525, -0.5, 0.5, -1.525, 0.5, -0.5, -1.525, 0.5, 0.5, -1.525, -0.5, -0.5, -1.525, 0.5, 0.5, -1.525, -0.5, 0.5, -1.525, -0.5, -0.5, 1.525, 0.5, 0.5, -1.525, 0.5, 0.5, 1.525, 0.5, -0.5, -1.525, 0.5, 0.5, -1.525, 0.5, -0.5, 1.525, 0.5, -0.5, -1.525, -0.5, 0.5, 1.525, -0.5, 0.5, -1.525, -0.5, -0.5, 1.525, -0.5, 0.5, 1.525, -0.5, -0.5, -1.525, -0.5, -0.5)
-
 [node name="BaseLevel" type="Node3D"]
+script = ExtResource("1_ew5uy")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -32,16 +28,8 @@ environment = SubResource("Environment_cwqvt")
 
 [node name="Obstacles" type="Node3D" parent="."]
 
+[node name="Bubbles" type="Node3D" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("1_wevqg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.31421, 0)
 collision_layer = 3
-collision_mask = 5
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_wevqg")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_ew5uy")
