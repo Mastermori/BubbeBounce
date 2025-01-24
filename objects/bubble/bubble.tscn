@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfc57rext5mmp"]
+
+[ext_resource type="Script" uid="uid://cn4s7j5af760u" path="res://objects/bubble/bubble.gd" id="1_5qxx4"]
+[ext_resource type="Shader" uid="uid://b2ylmgy6clo1p" path="res://objects/bubble/bubble.gdshader" id="1_no3pi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5qxx4"]
+render_priority = 0
+shader = ExtResource("1_no3pi")
+shader_parameter/fuwafuwa_speed = 1.5
+shader_parameter/fuwafuwa_size = 0.05
+shader_parameter/outline_color = Color(0.45, 0.7, 1, 1)
+shader_parameter/outline_ratio = 1.0
+shader_parameter/noise_speed = 0.2
+shader_parameter/noise_scale = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_iwk3a"]
+material = SubResource("ShaderMaterial_5qxx4")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_no3pi"]
+radius = 0.1
+
+[node name="Bubble" type="Area3D"]
+collision_layer = 0
+script = ExtResource("1_5qxx4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_iwk3a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("SphereShape3D_no3pi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_no3pi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
