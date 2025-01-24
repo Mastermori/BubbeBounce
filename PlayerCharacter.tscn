@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw0tug4f5d03"]
+
+[ext_resource type="Script" uid="uid://m3pcsmljt22v" path="res://CollisionColor.gd" id="1_uf0uw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_x4av3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mqji"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_rpqi1"]
+material = SubResource("StandardMaterial3D_3mqji")
+
+[node name="RigidBody3D" type="RigidBody3D" node_paths=PackedStringArray("mesh")]
+contact_monitor = true
+max_contacts_reported = 10000
+script = ExtResource("1_uf0uw")
+mesh = NodePath("CollisionShape3D/MeshInstance3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_x4av3")
+debug_color = Color(0, 0.6, 0.701961, 1)
+debug_fill = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("SphereMesh_rpqi1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
