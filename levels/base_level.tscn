@@ -33,7 +33,6 @@ environment = SubResource("Environment_cwqvt")
 
 [node name="Player" parent="." instance=ExtResource("1_wevqg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.31421, 0)
-collision_layer = 3
 
 [node name="AudioListener3D" type="AudioListener3D" parent="Player"]
 

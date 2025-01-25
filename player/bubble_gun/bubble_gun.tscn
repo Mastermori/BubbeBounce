@@ -8,8 +8,7 @@
 radius = 0.04
 height = 0.3
 
-[node name="BubbleGun" type="RayCast3D" node_paths=PackedStringArray("_soundEmitter")]
-target_position = Vector3(1000, 0, 0)
+[node name="BubbleGun" type="Node3D" node_paths=PackedStringArray("_soundEmitter")]
 script = ExtResource("1_fk6be")
 bubble_scene = ExtResource("2_v8jkv")
 _soundEmitter = NodePath("BubbleGunSoundEmitter")

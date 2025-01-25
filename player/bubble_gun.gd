@@ -1,4 +1,4 @@
-extends RayCast3D
+extends Node3D
 
 @export var bubble_scene: PackedScene
 
@@ -6,7 +6,7 @@ extends RayCast3D
 
 @onready var camera: Camera3D = $"../Camera3D"
 
-@onready var player: RigidBody3D = owner
+@onready var player: Player = owner
 @onready var initial_position := position
 @onready var dropPlane := Plane(Vector3(0, 0, 1), player.position.z)
 

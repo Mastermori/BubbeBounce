@@ -1,11 +1,12 @@
 class_name Bubble
-extends Node3D
+extends Area3D
 
 var velocity := Vector3.ZERO
 var should_bounce := false
 var size := 1.0
 
 @export var soundEmitter: AudioStreamPlayer3D
+@export var fade_timer_after_hit: float = .01
 
 @onready var collision_shape_3d: CollisionShape3D = $MeshInstance3D/StaticBody3D/CollisionShape3D
 @onready var fade_timer: Timer = $FadeTimer
@@ -24,14 +25,18 @@ func init_shoot(direction: Vector2, speed: float = .15, size: float = 1.0) -> vo
 func _physics_process(delta: float) -> void:
 	position += velocity
 
-func _on_body_entered(body: Node3D) -> void:
+func _on_body_entered(body: PhysicsBody3D) -> void:
 	velocity = Vector3.ZERO
 	should_bounce = true
 	collision_shape_3d.set_deferred("disabled", false)
 	var tween := create_tween()
 	tween.tween_property(self, "scale", Vector3.ONE, .3).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE).from_current()
-	fade_timer.start(2)
+	fade_timer.start()
 	_playLandingSound()
+
+func on_hit_by_player() -> void:
+	if fade_timer.time_left > fade_timer_after_hit:
+		fade_timer.start(fade_timer_after_hit)
 
 func _fade_out() -> void:
 	var tween := create_tween()
