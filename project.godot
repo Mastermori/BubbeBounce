@@ -23,9 +23,8 @@ Globals="*res://singletons/globals.gd"
 
 window/size/viewport_width=1080
 window/size/viewport_height=720
-window/size/mode=3
 window/stretch/mode="canvas_items"
-window/stretch/aspect="ignore"
+window/stretch/aspect="keep_width"
 
 [input]
 

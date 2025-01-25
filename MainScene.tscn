@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c16rdkl8x5iye"]
+[gd_scene load_steps=4 format=3 uid="uid://c16rdkl8x5iye"]
 
 [ext_resource type="Script" uid="uid://x2f3iclpeqyn" path="res://singletons/scene_manager.gd" id="1_x4av3"]
-[ext_resource type="PackedScene" uid="uid://3aewj2ir0ogj" path="res://Ui/Menus/MainMenu.tscn" id="2_rpqi1"]
+[ext_resource type="PackedScene" uid="uid://3aewj2ir0ogj" path="res://Ui/Menus/MainMenu/MainMenu.tscn" id="2_rpqi1"]
+[ext_resource type="PackedScene" uid="uid://cntk25bw6o5mi" path="res://Ui/Menus/PauseMenu/PauseMenu.tscn" id="3_rpqi1"]
 
 [node name="MainScene" type="Node3D"]
 script = ExtResource("1_x4av3")
 
 [node name="MainMenu" parent="." instance=ExtResource("2_rpqi1")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_rpqi1")]
+visible = false

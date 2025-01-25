@@ -29,6 +29,10 @@ func _load_scene(sceneIndex: int) -> void:
 	main_menu.visible = false
 	self.add_child(scene)
 	
+func reload_scene() -> void:
+	_unload_scene()
+	_load_scene(current_level_index)
+	
 func _unload_scene() -> void:
 	if current_level == null:
 		return;

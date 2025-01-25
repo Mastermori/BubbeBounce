@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://3aewj2ir0ogj"]
 
 [ext_resource type="Texture2D" uid="uid://c4i5qdplcm4c3" path="res://Bubbe_MainMenu_Artwork.png" id="1_oj5fm"]
-[ext_resource type="Script" uid="uid://cchnhtu1uhvpd" path="res://Ui/Menus/main_menu.gd" id="1_wt5kd"]
+[ext_resource type="Script" uid="uid://cchnhtu1uhvpd" path="res://Ui/Menus/MainMenu/main_menu.gd" id="1_wt5kd"]
 [ext_resource type="StyleBox" uid="uid://7f2t1a81pinp" path="res://Ui/Buttons/ButtonOverride.tres" id="2_2s0o5"]
 [ext_resource type="StyleBox" uid="uid://p0l7xp251m20" path="res://Ui/Buttons/ButtonHoverOverride.tres" id="2_uimj6"]
 [ext_resource type="StyleBox" uid="uid://petff8t71cy4" path="res://Ui/Buttons/ButtonPressedOverride.tres" id="3_bu4cc"]
@@ -10,6 +10,7 @@
 texture = ExtResource("1_oj5fm")
 
 [node name="MainMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
