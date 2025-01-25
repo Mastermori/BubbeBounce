@@ -11,6 +11,8 @@ extends Control
 @onready var loseBackToMenuButton: Button = $Content/LoseContainer/BackToMenuButton
 @onready var tryAgainButton: Button = $Content/LoseContainer/TryAgainButton	
 
+@onready var _game_end_emitter: AudioStreamPlayer3D = $game_end_emitter
+
 var try_again_callback: Callable
 
 func _ready() -> void:
@@ -42,11 +44,15 @@ func show_game_end(win: bool) -> void:
 		loseContent.visible = false
 		winBackToMenuButton.pressed.connect(_on_back_to_menu)
 		nextLevelButton.pressed.connect(_on_next_level)
+		_game_end_emitter.play()
+		_game_end_emitter.get_stream_playback().switch_to_clip(1)
 	else:
 		loseContent.visible = true
 		winContent.visible = false
 		loseBackToMenuButton.pressed.connect(_on_back_to_menu)
 		tryAgainButton.pressed.connect(_on_try_again)
+		_game_end_emitter.play()
+		_game_end_emitter.get_stream_playback().switch_to_clip(0)
 
 func _on_back_to_menu() -> void:
 	Globals.scene_manager.back_to_menu()

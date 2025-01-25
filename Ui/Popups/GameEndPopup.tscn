@@ -1,6 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://d04wc2xd0evxd"]
+[gd_scene load_steps=15 format=3 uid="uid://d04wc2xd0evxd"]
 
 [ext_resource type="Script" uid="uid://d3a6wdn8vtdyi" path="res://Ui/Popups/game_end_popup.gd" id="1_yfwdu"]
+[ext_resource type="AudioStream" uid="uid://drrfqnhjy4eib" path="res://Ui/Popups/LoseWinSounds/Grieving_Capybara_01-001.wav" id="2_yjmyh"]
+[ext_resource type="AudioStream" uid="uid://cdl4vk6is7060" path="res://Ui/Popups/LoseWinSounds/Grieving_Capybara_01-002.wav" id="3_pc8l5"]
+[ext_resource type="AudioStream" uid="uid://dy20plvml7676" path="res://Ui/Popups/LoseWinSounds/Grieving_Capybara_01-003.wav" id="4_mp67x"]
+[ext_resource type="AudioStream" uid="uid://2ke6011gqbli" path="res://Ui/Popups/LoseWinSounds/Grieving_Capybara_01-004.wav" id="5_gw7je"]
+[ext_resource type="AudioStream" uid="uid://djwg7hkeuppk3" path="res://Ui/Popups/LoseWinSounds/Happy_Capybara_01-250125_2130-001.wav" id="6_ytwqb"]
+[ext_resource type="AudioStream" uid="uid://c1bewv51nrg7f" path="res://Ui/Popups/LoseWinSounds/Happy_Capybara_01-250125_2130-002.wav" id="7_exlv5"]
+[ext_resource type="AudioStream" uid="uid://xd1djx2phhtd" path="res://Ui/Popups/LoseWinSounds/Happy_Capybara_01-250125_2130-003.wav" id="8_6df44"]
+[ext_resource type="AudioStream" uid="uid://bgmavau55mcuu" path="res://Ui/Popups/LoseWinSounds/Happy_Capybara_01-250125_2130-004.wav" id="9_mgjmm"]
+[ext_resource type="AudioStream" uid="uid://csmnxufirlokc" path="res://Ui/Popups/LoseWinSounds/Happy_Capybara_01-250125_2130-005.wav" id="10_ax28a"]
+[ext_resource type="AudioStream" uid="uid://djf8bx2jgjome" path="res://Ui/Popups/LoseWinSounds/Happy_Capybara_01-250125_2130-006.wav" id="11_eucqn"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ytwqb"]
+streams_count = 4
+stream_0/stream = ExtResource("2_yjmyh")
+stream_1/stream = ExtResource("3_pc8l5")
+stream_2/stream = ExtResource("4_mp67x")
+stream_3/stream = ExtResource("5_gw7je")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_exlv5"]
+streams_count = 6
+stream_0/stream = ExtResource("6_ytwqb")
+stream_1/stream = ExtResource("7_exlv5")
+stream_2/stream = ExtResource("8_6df44")
+stream_3/stream = ExtResource("9_mgjmm")
+stream_4/stream = ExtResource("10_ax28a")
+stream_5/stream = ExtResource("11_eucqn")
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_6df44"]
+clip_count = 2
+clip_0/name = &""
+clip_0/stream = SubResource("AudioStreamRandomizer_ytwqb")
+clip_0/auto_advance = 0
+clip_1/name = &""
+clip_1/stream = SubResource("AudioStreamRandomizer_exlv5")
+clip_1/auto_advance = 0
 
 [node name="GameEndPopup" type="Control"]
 layout_mode = 3
@@ -62,3 +97,6 @@ text = "Go to Menu"
 [node name="TryAgainButton" type="Button" parent="Content/LoseContainer"]
 layout_mode = 2
 text = "Try again!"
+
+[node name="game_end_emitter" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamInteractive_6df44")
