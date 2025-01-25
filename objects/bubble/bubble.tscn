@@ -1,12 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfc57rext5mmp"]
+[gd_scene load_steps=15 format=3 uid="uid://bfc57rext5mmp"]
 
 [ext_resource type="Script" uid="uid://cn4s7j5af760u" path="res://objects/bubble/bubble.gd" id="1_5qxx4"]
 [ext_resource type="Shader" uid="uid://b2ylmgy6clo1p" path="res://objects/bubble/bubble.gdshader" id="1_no3pi"]
-[ext_resource type="AudioStream" uid="uid://drpn1fqb7h4sm" path="res://objects/bubble/bubble_sounds/BubbleLand1.wav" id="3_xjert"]
-[ext_resource type="AudioStream" uid="uid://crpncj2sh7vyj" path="res://objects/bubble/bubble_sounds/BubbleLand2.wav" id="4_gwryw"]
-[ext_resource type="AudioStream" uid="uid://b75mg6p6umnf5" path="res://objects/bubble/bubble_sounds/BubbleLand3.wav" id="5_sq3jk"]
-[ext_resource type="AudioStream" uid="uid://cx0pt18ur3vdr" path="res://objects/bubble/bubble_sounds/BubbleLand4.wav" id="6_l3iy3"]
-[ext_resource type="AudioStream" uid="uid://d2sqeduuqjdwl" path="res://objects/bubble/bubble_sounds/BubbleLand5.wav" id="7_ki17u"]
+[ext_resource type="AudioStream" uid="uid://q5cuog2nxpj4" path="res://objects/bubble/bubble_sounds/PitchUp5Sec.wav" id="3_sq3jk"]
+[ext_resource type="Script" uid="uid://dvii7ty3ndlic" path="res://objects/bubble/bubble_sounds/bubbleGrowPitcher.gd" id="4_euikj"]
+[ext_resource type="AudioStream" uid="uid://bngcsvpx6vbed" path="res://objects/bubble/bubble_sounds/Bubbl03eEndGrow_.wav" id="4_gwryw"]
+[ext_resource type="AudioStream" uid="uid://b5c8cwo5nmpv6" path="res://objects/bubble/bubble_sounds/Bubbl04eEndGrow_.wav" id="5_sq3jk"]
+[ext_resource type="AudioStream" uid="uid://31dvkn6sm2nq" path="res://objects/bubble/bubble_sounds/Bubbl05eEndGrow_.wav" id="6_l3iy3"]
+[ext_resource type="AudioStream" uid="uid://smafctcgyo20" path="res://objects/bubble/bubble_sounds/Bubbl06eEndGrow_.wav" id="7_ki17u"]
+[ext_resource type="AudioStream" uid="uid://b81k343056ct7" path="res://objects/bubble/bubble_sounds/Bubbl07eEndGrow_.wav" id="8_ud0le"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5qxx4"]
 render_priority = 0
@@ -25,18 +27,21 @@ material = SubResource("ShaderMaterial_5qxx4")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ud0le"]
 random_pitch = 1.05
-streams_count = 5
-stream_0/stream = ExtResource("3_xjert")
-stream_1/stream = ExtResource("4_gwryw")
-stream_2/stream = ExtResource("5_sq3jk")
-stream_3/stream = ExtResource("6_l3iy3")
-stream_4/stream = ExtResource("7_ki17u")
+streams_count = 1
+stream_0/stream = ExtResource("3_sq3jk")
 
-[node name="Bubble" type="Area3D" node_paths=PackedStringArray("soundEmitter")]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lvo3p"]
+streams_count = 5
+stream_0/stream = ExtResource("4_gwryw")
+stream_1/stream = ExtResource("5_sq3jk")
+stream_2/stream = ExtResource("6_l3iy3")
+stream_3/stream = ExtResource("7_ki17u")
+stream_4/stream = ExtResource("8_ud0le")
+
+[node name="Bubble" type="Area3D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_5qxx4")
-soundEmitter = NodePath("BubbleLandSoundEmitter")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_iwk3a")
@@ -59,6 +64,10 @@ one_shot = true
 [node name="BubbleLandSoundEmitter" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_ud0le")
 volume_db = -20.815
+script = ExtResource("4_euikj")
+
+[node name="BubbleEndGrowEmitter" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_lvo3p")
 
 [node name="TimerLabel" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.186746, 0)
