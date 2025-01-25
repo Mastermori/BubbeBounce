@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 	capybara.rotate_z(rotation_impulse)
 	rotation_impulse *= (1 - .65 * delta)
 	
-	camera.fov = lerp(camera.fov, 75 * clamp(.95 + velocity.length() / 8 * .25, .95, 1.2), delta)
+	camera.fov = lerp(camera.fov, 75 * clamp(.95 + velocity.length() / 8 * .35, .95, 1.3), delta)
 	
 	var collision := move_and_collide(velocity * delta)
 	if collision and not collided_last_frame:
@@ -51,6 +51,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		collided_last_frame = false
 		velocity += Vector3.DOWN * gravity * gravity_multiplier * delta
+	
+	if position.y < -10:
+		die()
 
 func hit_bubble(bubble: Bubble, collision: KinematicCollision3D) -> void:
 	bubble.on_hit_by_player()
@@ -60,7 +63,6 @@ func hit_bubble(bubble: Bubble, collision: KinematicCollision3D) -> void:
 	velocity = collision_normal * min(8, velocity.length() * 1.2 * bubble.size)
 	var angle_percent := Vector2.DOWN.angle_to(Vector2(collision_normal.x, collision_normal.y)) / (2 * PI)
 	rotation_impulse = clamp(rotation_impulse + sign(angle_percent) * pow(angle_percent, 2) * bubble.size, -1, 1)
-	#camera.zoom_effect()
 
 func die() -> void:
 	Globals.current_level.finish(false)

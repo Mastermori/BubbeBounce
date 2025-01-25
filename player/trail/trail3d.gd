@@ -261,6 +261,7 @@ func _ready() -> void:
 	mesh = ImmediateMesh.new()
 	_target = get_parent()
 	top_level = true
+	global_position = Vector3.ZERO
 
 
 
