@@ -20,10 +20,17 @@ func init(try_again_callback: Callable) -> void:
 	self.try_again_callback = try_again_callback
 
 func _disconnect_listeners() -> void:
-	winBackToMenuButton.pressed.disconnect(_on_back_to_menu)
-	nextLevelButton.pressed.disconnect(_on_next_level)
-	loseBackToMenuButton.pressed.disconnect(_on_back_to_menu)
-	tryAgainButton.pressed.disconnect(_on_try_again)
+	if winBackToMenuButton.pressed.has_connections():
+		winBackToMenuButton.pressed.disconnect(_on_back_to_menu)
+	
+	if nextLevelButton.pressed.has_connections():
+		nextLevelButton.pressed.disconnect(_on_next_level)
+	
+	if loseBackToMenuButton.pressed.has_connections():
+		loseBackToMenuButton.pressed.disconnect(_on_back_to_menu)
+	
+	if tryAgainButton.pressed.has_connections():
+		tryAgainButton.pressed.disconnect(_on_try_again)
 
 func _exit_tree() -> void:
 	_disconnect_listeners()
