@@ -7,10 +7,12 @@ extends CharacterBody3D
 
 # Remove when death is implemented
 var collided_last_frame := false
+var rotation_impulse: float = 0
 
-@onready var mesh: MeshInstance3D = $MeshInstance3D
+@onready var mesh: MeshInstance3D = $Body/MeshInstance3D
 @onready var bounce_cooldown: Timer = $BounceCooldown
 @onready var camera: PlayerCamera = $Camera3D
+@onready var capybara: Node3D = $Body/capybara
 
 func _ready() -> void:
 	Globals.player = self
@@ -28,23 +30,34 @@ func _physics_process(delta: float) -> void:
 	var input_dir := Input.get_axis("move_left", "move_right")
 	var max_speed_not_reached: bool = abs(velocity.x) < max_move_speed
 	var trying_to_break: bool = sign(velocity.x) != sign(input_dir)
-	if input_dir != 0 and (max_speed_not_reached or trying_to_break):
-		velocity.x = lerp(velocity.x, input_dir * max_move_speed, delta * acceleration)
+	if input_dir != 0:
+		capybara.rotate_z(delta * acceleration * -input_dir * 1.5)
+		if max_speed_not_reached or trying_to_break:
+			velocity.x = lerp(velocity.x, input_dir * max_move_speed, delta * acceleration)
+	
+	capybara.rotate_z(rotation_impulse)
+	rotation_impulse *= (1 - .65 * delta)
+	
+	camera.fov = lerp(camera.fov, 75 * clamp(.95 + velocity.length() / 8 * .25, .95, 1.2), delta)
 	
 	var collision := move_and_collide(velocity * delta)
-	if collision:
+	if collision and not collided_last_frame:
+		collided_last_frame = true
 		var body: PhysicsBody3D = collision.get_collider()
 		if not body.get_collision_layer_value(3):
-			collided_last_frame = true
 			die()
 			return
 		hit_bubble(body.owner, collision)
 	else:
+		collided_last_frame = false
 		velocity += Vector3.DOWN * gravity * gravity_multiplier * delta
 
 func hit_bubble(bubble: Bubble, collision: KinematicCollision3D) -> void:
 	bubble.on_hit_by_player()
-	velocity = collision.get_normal() * min(8, velocity.length() * 1.2 * bubble.size)
+	var collision_normal := collision.get_normal()
+	velocity = collision_normal * min(8, velocity.length() * 1.2 * bubble.size)
+	var angle_percent := Vector2.DOWN.angle_to(Vector2(collision_normal.x, collision_normal.y)) / (2 * PI)
+	rotation_impulse = clamp(rotation_impulse + sign(angle_percent) * pow(angle_percent, 2) * bubble.size, -1, 1)
 	#camera.zoom_effect()
 
 func die() -> void:
