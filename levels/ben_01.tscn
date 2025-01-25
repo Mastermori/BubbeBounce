@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://44m8ypt2cdal"]
+
+[ext_resource type="PackedScene" uid="uid://cscpcll7v3oqy" path="res://levels/base_level.tscn" id="1_5qyrj"]
+[ext_resource type="PackedScene" uid="uid://cut0lpewlcm1b" path="res://platforms/ig_tasse.tscn" id="2_xx52a"]
+[ext_resource type="PackedScene" uid="uid://bnv8gdwbstnq5" path="res://platforms/star.tscn" id="3_hxp6r"]
+
+[node name="Ben 01" instance=ExtResource("1_5qyrj")]
+
+[node name="IgTasse3" parent="Obstacles" index="0" instance=ExtResource("2_xx52a")]
+transform = Transform3D(-0.110228, 0.358078, -0.927162, -0.163107, -0.926717, -0.338515, -0.980432, 0.113914, 0.160556, 10.8716, -2.06425, -0.370535)
+
+[node name="IgTasse" parent="Obstacles" index="1" instance=ExtResource("2_xx52a")]
+transform = Transform3D(0.131084, -0.659573, 0.740122, -0.607846, 0.536295, 0.585586, -0.78316, -0.526641, -0.33062, -0.116122, -1.96112, 0.540396)
+
+[node name="IgTasse2" parent="Obstacles" index="2" instance=ExtResource("2_xx52a")]
+transform = Transform3D(-0.147988, -0.0965263, 0.984267, 0.521557, -0.853201, -0.00525468, 0.840284, 0.512573, 0.176608, 21.5488, -1.54466, -0.352093)
+
+[node name="IgTasse4" parent="Obstacles" index="3" instance=ExtResource("2_xx52a")]
+transform = Transform3D(-0.110228, 0.358078, -0.927162, -0.163107, -0.926717, -0.338515, -0.980432, 0.113914, 0.160556, 4.67523, -3.13338, -0.370535)
+
+[node name="IgTasse5" parent="Obstacles" index="4" instance=ExtResource("2_xx52a")]
+transform = Transform3D(-0.110228, 0.358078, -0.927162, -0.163107, -0.926717, -0.338515, -0.980432, 0.113914, 0.160556, 29.9302, 6.60415, -0.370535)
+
+[node name="IgTasse6" parent="Obstacles" index="5" instance=ExtResource("2_xx52a")]
+transform = Transform3D(-0.147988, -0.0965263, 0.984267, 0.521557, -0.853201, -0.00525468, 0.840284, 0.512573, 0.176608, 16.1391, -3.16758, -0.352093)
+
+[node name="star" parent="Obstacles" index="6" instance=ExtResource("3_hxp6r")]
+transform = Transform3D(-0.00455525, 0, 0.99999, -0.377643, 0.92595, -0.00172028, -0.92594, -0.377647, -0.00421794, 34.9669, 10.0911, -1.59506)
+
+[node name="Player" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0615311, 2.31421, 0)
+
+[node name="Goal" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.2394, 9.69289, 0)
+
+[editable path="GameEndPopup"]
