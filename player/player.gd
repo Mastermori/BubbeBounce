@@ -10,6 +10,8 @@ extends CharacterBody3D
 var collided_last_frame := false
 var rotation_impulse: float = 0
 
+var has_level_started: bool = false
+
 @onready var mesh: MeshInstance3D = $Body/MeshInstance3D
 @onready var bounce_cooldown: Timer = $BounceCooldown
 @onready var camera: PlayerCamera = $Camera3D
@@ -27,6 +29,8 @@ func _on_body_entered(body) -> void:
 	bounce_cooldown.start()
 
 func _physics_process(delta: float) -> void:
+	if !has_level_started:
+		return
 	var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 	
 	var input_dir := Input.get_axis("move_left", "move_right")
@@ -85,3 +89,4 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		#velocity = Vector3.DOWN * .5
 		activate_grativitation()
+		has_level_started = true
