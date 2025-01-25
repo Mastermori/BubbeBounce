@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var gravity_multiplier := 0.0
 @export var acceleration := 1
 @export var max_move_speed := 1.5
+@export var _min_bubble_boost : int
 
 # Remove when death is implemented
 var collided_last_frame := false
@@ -61,9 +62,12 @@ func hit_bubble(bubble: Bubble, collision: KinematicCollision3D) -> void:
 	bubble.on_hit_by_player()
 	var collision_normal := collision.get_normal()
 	collision_normal.z = 0
-	collision_normal = collision_normal.normalized()
-	var bubble_multiplier := bubble.size if bubble.size < 1 else pow(bubble.size, 2)
-	velocity = collision_normal * min(8, velocity.length() * 1.2 * bubble_multiplier)
+	collision_normal = collision_normal.normalized() 
+	var bubble_multiplier := bubble.size if bubble.size < 1 else pow(bubble.size, 2) 
+	if (collision_normal * min(8, velocity.length() * 1.2 * bubble_multiplier)).length() > _min_bubble_boost:
+		velocity = collision_normal * min(8, velocity.length() * 1.2 * bubble_multiplier)
+	else:
+		velocity = collision_normal.normalized()*_min_bubble_boost
 	var angle_percent := Vector2.DOWN.angle_to(Vector2(collision_normal.x, collision_normal.y)) / (2 * PI)
 	rotation_impulse = clamp(rotation_impulse + sign(angle_percent) * pow(angle_percent, 2) * bubble.size, -1, 1)
 	trail.emit = velocity.length() > 6
