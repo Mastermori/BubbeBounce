@@ -20,3 +20,4 @@ mesh = SubResource("CapsuleMesh_yw30f")
 
 [node name="BubbleGunSoundEmitter" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_fdtuc")
+volume_db = -38.481

@@ -13,6 +13,8 @@ material = SubResource("StandardMaterial3D_3mqji")
 [node name="RigidBody3D" type="RigidBody3D" node_paths=PackedStringArray("mesh")]
 collision_layer = 2
 collision_mask = 5
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 10000
@@ -32,3 +34,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465172, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.994609, 0.103695, 0, -0.103695, 0.994609, 0, 0.301776, 4.27537)
+
+[connection signal="input_event" from="." to="." method="_debug_drop_on_input"]
