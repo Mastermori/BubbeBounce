@@ -55,7 +55,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375688, -0.950683, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7658, 6.67108, 0)
 
 [node name="CollisionShape3D" parent="Goal" index="0"]
-transform = Transform3D(1.64882, 1.53708, 0, -1.58304, 1.60095, 0, 0, 0, 1, 50.9506, 7.04236, -0.152416)
+transform = Transform3D(1.41264, 1.27889, 0, -1.35629, 1.33203, 0, 0, 0, 1, 50.9506, 7.04236, -0.152416)
 
 [node name="Pole" parent="Goal" index="1"]
 transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 0.2, 63.6727, 0.755173, 0)
