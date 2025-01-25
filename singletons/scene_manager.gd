@@ -6,7 +6,7 @@ extends Node
 var current_level: Node3D
 var current_level_index: int = -1
 
-var levels: Array[PackedScene] = [preload("res://levels/test_level.tscn"), preload("res://levels/ben_01.tscn")]
+var levels: Array[PackedScene] = [preload("res://levels/ben_02.tscn"), preload("res://levels/test_level.tscn"), preload("res://levels/ben_01.tscn")]
 
 func _ready() -> void:
 	Globals.scene_manager = self

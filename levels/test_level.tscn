@@ -1,14 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c74ehhapvjwaf"]
+[gd_scene load_steps=4 format=3 uid="uid://c74ehhapvjwaf"]
 
 [ext_resource type="PackedScene" uid="uid://cscpcll7v3oqy" path="res://levels/base_level.tscn" id="1_46lwt"]
 [ext_resource type="PackedScene" uid="uid://b7avn13w71ywo" path="res://platforms/switch.tscn" id="8_wndkh"]
 [ext_resource type="PackedScene" uid="uid://ssrvf2bwr3od" path="res://platforms/energy.tscn" id="12_0vv12"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_wevqg"]
-size = Vector3(3.05, 1, 1)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ew5uy"]
-data = PackedVector3Array(-1.525, 0.5, 0.5, 1.525, 0.5, 0.5, -1.525, -0.5, 0.5, 1.525, 0.5, 0.5, 1.525, -0.5, 0.5, -1.525, -0.5, 0.5, 1.525, 0.5, -0.5, -1.525, 0.5, -0.5, 1.525, -0.5, -0.5, -1.525, 0.5, -0.5, -1.525, -0.5, -0.5, 1.525, -0.5, -0.5, 1.525, 0.5, 0.5, 1.525, 0.5, -0.5, 1.525, -0.5, 0.5, 1.525, 0.5, -0.5, 1.525, -0.5, -0.5, 1.525, -0.5, 0.5, -1.525, 0.5, -0.5, -1.525, 0.5, 0.5, -1.525, -0.5, -0.5, -1.525, 0.5, 0.5, -1.525, -0.5, 0.5, -1.525, -0.5, -0.5, 1.525, 0.5, 0.5, -1.525, 0.5, 0.5, 1.525, 0.5, -0.5, -1.525, 0.5, 0.5, -1.525, 0.5, -0.5, 1.525, 0.5, -0.5, -1.525, -0.5, 0.5, 1.525, -0.5, 0.5, -1.525, -0.5, -0.5, 1.525, -0.5, 0.5, 1.525, -0.5, -0.5, -1.525, -0.5, -0.5)
 
 [node name="BaseLevel" instance=ExtResource("1_46lwt")]
 
@@ -22,30 +16,19 @@ transform = Transform3D(-0.0523434, -0.00518956, 0.998616, -0.00898088, 0.999949
 transform = Transform3D(-0.099349, -0.884213, 0.456396, 0.11124, 0.44592, 0.888133, -0.988815, 0.139005, 0.0540585, 21.8462, -5.17343, -0.341656)
 
 [node name="Switch2" parent="Obstacles" index="2" instance=ExtResource("8_wndkh")]
-transform = Transform3D(-0.00944897, 0.0197191, 0.999761, -0.97619, 0.216498, -0.0134963, -0.216712, -0.976084, 0.0172039, 13.4254, -5.5892, -0.228987)
+transform = Transform3D(-0.00944897, 0.0197191, 0.999761, 0.602646, 0.797945, -0.0100428, -0.797953, 0.602407, -0.0194233, 14.3155, -5.5892, -1.39134)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles" index="3"]
-transform = Transform3D(11.1131, 0, 0, 0, 1, 0, 0, 0, 1, 35.5098, -14.8321, 0)
-mesh = SubResource("BoxMesh_wevqg")
-skeleton = NodePath("")
-metadata/_edit_group_ = true
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Obstacles/MeshInstance3D" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/MeshInstance3D/StaticBody3D" index="0"]
-shape = SubResource("ConcavePolygonShape3D_ew5uy")
-
-[node name="Energy2" parent="Obstacles" index="4" instance=ExtResource("12_0vv12")]
+[node name="Energy2" parent="Obstacles" index="3" instance=ExtResource("12_0vv12")]
 transform = Transform3D(-0.517544, 0.173683, -0.837844, 0.0912755, 0.984802, 0.147765, 0.850775, 0, -0.525531, 66.9347, -0.303769, -0.176731)
 
-[node name="Energy" parent="Obstacles" index="5" instance=ExtResource("12_0vv12")]
+[node name="Energy" parent="Obstacles" index="4" instance=ExtResource("12_0vv12")]
 transform = Transform3D(0.554716, 0.735261, 0.389463, -0.771846, 0.629531, -0.0891329, -0.310715, -0.251162, 0.916719, 63.7558, -5.33067, -0.176731)
 
-[node name="Energy4" parent="Obstacles" index="6" instance=ExtResource("12_0vv12")]
+[node name="Energy4" parent="Obstacles" index="5" instance=ExtResource("12_0vv12")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.0251, -4.72674, -0.0883656)
 
-[node name="Energy3" parent="Obstacles" index="7" instance=ExtResource("12_0vv12")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.0307, -5.85293, -0.0883656)
+[node name="Energy3" parent="Obstacles" index="6" instance=ExtResource("12_0vv12")]
+transform = Transform3D(0.972317, -0.233666, 0, 0.198795, 0.827213, -0.525546, 0.122802, 0.510997, 0.850765, 30.3303, -7.12636, -0.0883656)
 
 [node name="Player" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.375688, -0.950683, 0)
@@ -57,7 +40,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7658, 6.67108, 0)
 transform = Transform3D(1.41264, 1.27889, 0, -1.35629, 1.33203, 0, 0, 0, 1, 50.9506, 7.04236, -0.152416)
 
 [node name="star" parent="Goal" index="1"]
-transform = Transform3D(-0.0412502, -0.0026505, 0.892841, 0.00204528, 0.79198, 0.00306893, -0.997051, 0.00173428, -0.0369325, 51.0275, 6.98914, -0.16497)
+transform = Transform3D(-0.0412502, -0.0026505, 0.892841, 0.00204528, 0.79198, 0.00306893, -0.997051, 0.00173428, -0.0369325, 51.0275, 6.98914, -1.38441)
 
 [node name="Switch" parent="." index="7" instance=ExtResource("8_wndkh")]
 transform = Transform3D(-0.0506298, 0.454154, 0.889483, 0.0160346, 0.89088, -0.453955, -0.998589, -0.008721, -0.0523873, 60.0007, -9.63342, -0.338345)
@@ -90,10 +73,10 @@ transform = Transform3D(-0.0523434, -0.00518956, 0.998616, -0.00898088, 0.999949
 transform = Transform3D(-0.0535211, 0, -0.998567, -0.246949, 0.968938, 0.013236, 0.967549, 0.247303, -0.0518587, 70.6232, 4.9447, -0.0883656)
 
 [node name="Switch6" parent="." index="17" instance=ExtResource("8_wndkh")]
-transform = Transform3D(-0.0523434, -0.00518956, 0.998616, -0.00898088, 0.999949, 0.00472575, -0.998589, -0.008721, -0.0523873, 13.4511, 10.0256, -0.338345)
+transform = Transform3D(-0.0646596, -0.32043, 0.945063, -0.0250324, 0.947268, 0.319465, -0.997594, -0.00300065, -0.0692711, 13.8284, 12.4784, -0.338345)
 
 [node name="Switch7" parent="." index="18" instance=ExtResource("8_wndkh")]
-transform = Transform3D(-0.0523434, -0.00518956, 0.998616, -0.00898088, 0.999949, 0.00472575, -0.998589, -0.008721, -0.0523873, 25.3948, 10.0256, -0.338345)
+transform = Transform3D(-0.0520754, 0.354386, 0.933648, 0.0104229, 0.935059, -0.35434, -0.998589, -0.008721, -0.0523873, 25.4218, 10.5647, -0.338345)
 
 [node name="Switch8" parent="." index="19" instance=ExtResource("8_wndkh")]
 transform = Transform3D(-0.0523434, -0.00518956, 0.998616, -0.00898088, 0.999949, 0.00472575, -0.998589, -0.008721, -0.0523873, 37.2206, 10.0163, -0.338345)

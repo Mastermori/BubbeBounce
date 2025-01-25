@@ -11,11 +11,11 @@ collision_mask = 2
 script = ExtResource("1_mtdsc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.744382, 0, 0, 0, 1.72282, 0, 0, 0, 1.86275, -0.101305, 0.0740845, -0.145486)
+transform = Transform3D(0.869546, 0, 0, 0, 1.82613, 0, 0, 0, 1.97235, -0.101305, 0.0740845, -0.145486)
 shape = SubResource("BoxShape3D_kdloh")
 debug_color = Color(0, 1, 0, 1)
 
 [node name="star" parent="." instance=ExtResource("2_ke5pa")]
-transform = Transform3D(0.997906, 0, 0, 0, 0.791986, 0, 0, 0, 0.89361, -0.0993992, 0, -0.16497)
+transform = Transform3D(0.997906, 0, 0, 0, 0.791986, 0, 0, 0, 0.89361, 1.32973, 0, -0.16497)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
