@@ -155,3 +155,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8928, 4.45338, 0)
 
 [node name="Player" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.16336, 0)
+
+[node name="Goal" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7658, 6.67108, 0)
+
+[editable path="Goal"]
+[editable path="GameEndPopup"]

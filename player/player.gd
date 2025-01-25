@@ -61,6 +61,7 @@ func hit_bubble(bubble: Bubble, collision: KinematicCollision3D) -> void:
 	#camera.zoom_effect()
 
 func die() -> void:
+	Globals.current_level.finish(false)
 	velocity = Vector3.ZERO
 
 # Probably not supposed to be here

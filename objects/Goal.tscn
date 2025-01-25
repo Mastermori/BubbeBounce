@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://gq6v5aqgvewb"]
+
+[ext_resource type="Script" uid="uid://l7hfyyrdbjeb" path="res://objects/goal.gd" id="1_mtdsc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kdloh"]
+
+[node name="Goal" type="Area3D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_mtdsc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_kdloh")
+debug_color = Color(0, 1, 0, 1)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

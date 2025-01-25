@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://d04wc2xd0evxd"]
+
+[ext_resource type="Script" uid="uid://d3a6wdn8vtdyi" path="res://Ui/game_end_popup.gd" id="1_yfwdu"]
+
+[node name="GameEndPopup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yfwdu")
+
+[node name="Content" type="PanelContainer" parent="."]
+process_mode = 3
+clip_contents = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -72.5
+offset_right = 167.0
+offset_bottom = 72.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WinContainer" type="VBoxContainer" parent="Content"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="WinText" type="Label" parent="Content/WinContainer"]
+layout_mode = 2
+text = "You have won!"
+horizontal_alignment = 1
+
+[node name="BackToMenuButton" type="Button" parent="Content/WinContainer"]
+layout_mode = 2
+text = "Go to Menu"
+
+[node name="NextLevelButton" type="Button" parent="Content/WinContainer"]
+layout_mode = 2
+text = "Next Level"
+
+[node name="LoseContainer" type="VBoxContainer" parent="Content"]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="LoseText" type="Label" parent="Content/LoseContainer"]
+layout_mode = 2
+text = "You have lost!"
+horizontal_alignment = 1
+
+[node name="BackToMenuButton" type="Button" parent="Content/LoseContainer"]
+layout_mode = 2
+text = "Go to Menu"
+
+[node name="TryAgainButton" type="Button" parent="Content/LoseContainer"]
+layout_mode = 2
+text = "Try again!"
