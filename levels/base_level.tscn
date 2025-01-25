@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d284tnwpobnj4" path="res://player/player.tscn" id="1_wevqg"]
 [ext_resource type="PackedScene" uid="uid://dcjbujoi1wura" path="res://Music/music_player.tscn" id="3_63c5o"]
 [ext_resource type="PackedScene" uid="uid://gq6v5aqgvewb" path="res://objects/Goal.tscn" id="4_p5284"]
-[ext_resource type="PackedScene" uid="uid://d04wc2xd0evxd" path="res://Ui/GameEndPopup.tscn" id="5_46036"]
+[ext_resource type="PackedScene" uid="uid://d04wc2xd0evxd" path="res://Ui/Popups/GameEndPopup.tscn" id="5_46036"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_80vhd"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)

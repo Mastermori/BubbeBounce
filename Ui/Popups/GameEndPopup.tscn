@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d04wc2xd0evxd"]
 
-[ext_resource type="Script" uid="uid://d3a6wdn8vtdyi" path="res://Ui/game_end_popup.gd" id="1_yfwdu"]
+[ext_resource type="Script" uid="uid://d3a6wdn8vtdyi" path="res://Ui/Popups/game_end_popup.gd" id="1_yfwdu"]
 
 [node name="GameEndPopup" type="Control"]
 layout_mode = 3

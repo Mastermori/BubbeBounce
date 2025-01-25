@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://3aewj2ir0ogj"]
+
+[ext_resource type="Texture2D" uid="uid://c4i5qdplcm4c3" path="res://Bubbe_MainMenu_Artwork.png" id="1_oj5fm"]
+[ext_resource type="Script" uid="uid://cchnhtu1uhvpd" path="res://Ui/Menus/main_menu.gd" id="1_wt5kd"]
+[ext_resource type="StyleBox" uid="uid://7f2t1a81pinp" path="res://Ui/Buttons/ButtonOverride.tres" id="2_2s0o5"]
+[ext_resource type="StyleBox" uid="uid://p0l7xp251m20" path="res://Ui/Buttons/ButtonHoverOverride.tres" id="2_uimj6"]
+[ext_resource type="StyleBox" uid="uid://petff8t71cy4" path="res://Ui/Buttons/ButtonPressedOverride.tres" id="3_bu4cc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2s0o5"]
+texture = ExtResource("1_oj5fm")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wt5kd")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_right = 1080.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2s0o5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -155.5
+offset_top = -140.0
+offset_right = 155.5
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = ExtResource("2_uimj6")
+theme_override_styles/pressed = ExtResource("3_bu4cc")
+theme_override_styles/normal = ExtResource("2_2s0o5")
+text = "Play!"
+
+[node name="LevelSelection" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = ExtResource("2_uimj6")
+theme_override_styles/pressed = ExtResource("3_bu4cc")
+theme_override_styles/normal = ExtResource("2_2s0o5")
+text = "Level Selection
+"
+
+[node name="Credits" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+theme_override_styles/hover = ExtResource("2_uimj6")
+theme_override_styles/pressed = ExtResource("3_bu4cc")
+theme_override_styles/normal = ExtResource("2_2s0o5")
+text = "Credits"

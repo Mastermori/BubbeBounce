@@ -49,10 +49,10 @@ func show_game_end(win: bool) -> void:
 		tryAgainButton.pressed.connect(_on_try_again)
 
 func _on_back_to_menu() -> void:
-	print("Back to menu")
+	Globals.scene_manager.back_to_menu()
 
 func _on_next_level() -> void:
-	print("Next level")
+	Globals.scene_manager.next_level()
 
 func _on_try_again() -> void:
 	_disconnect_listeners()
