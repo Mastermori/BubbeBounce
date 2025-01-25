@@ -41,6 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.31421, 0)
 [node name="Music_Player" parent="Player/AudioListener3D" instance=ExtResource("3_63c5o")]
 
 [node name="Goal" parent="." instance=ExtResource("4_p5284")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="GameEndPopup" parent="." instance=ExtResource("5_46036")]
 visible = false

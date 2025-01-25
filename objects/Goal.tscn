@@ -1,20 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://gq6v5aqgvewb"]
+[gd_scene load_steps=4 format=3 uid="uid://gq6v5aqgvewb"]
 
 [ext_resource type="Script" uid="uid://l7hfyyrdbjeb" path="res://objects/goal.gd" id="1_mtdsc"]
+[ext_resource type="PackedScene" uid="uid://bnv8gdwbstnq5" path="res://platforms/star.tscn" id="2_ke5pa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kdloh"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mtdsc"]
-albedo_color = Color(0.153077, 0.153077, 0.153077, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_ke5pa"]
-material = SubResource("StandardMaterial3D_mtdsc")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2y4al"]
-albedo_color = Color(0.86685, 0.0560208, 0.0323639, 1)
-
-[sub_resource type="PrismMesh" id="PrismMesh_i1ue2"]
-material = SubResource("StandardMaterial3D_2y4al")
 
 [node name="Goal" type="Area3D"]
 collision_layer = 4
@@ -22,15 +11,11 @@ collision_mask = 2
 script = ExtResource("1_mtdsc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.744382, 0, 0, 0, 1.72282, 0, 0, 0, 1.86275, -0.101305, 0.0740845, -0.145486)
 shape = SubResource("BoxShape3D_kdloh")
 debug_color = Color(0, 1, 0, 1)
 
-[node name="Pole" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 0.2, 0, 0.512631, 0)
-mesh = SubResource("CylinderMesh_ke5pa")
-
-[node name="Flag" type="MeshInstance3D" parent="."]
-transform = Transform3D(-3.14722e-08, 1.51, 0, -0.72, -6.60042e-08, 0, 0, 0, 0.09, 0.838263, 1.14247, 0)
-mesh = SubResource("PrismMesh_i1ue2")
+[node name="star" parent="." instance=ExtResource("2_ke5pa")]
+transform = Transform3D(0.997906, 0, 0, 0, 0.791986, 0, 0, 0, 0.89361, -0.0993992, 0, -0.16497)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
