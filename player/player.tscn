@@ -64,7 +64,7 @@ skeleton = NodePath("../../CollisionShape3D")
 transform = Transform3D(-1.74846e-08, 0, -0.4, -0.103528, 0.38637, 4.52534e-09, 0.38637, 0.103528, -1.68888e-08, 0, 0.0740854, 0)
 
 [node name="Trail3D" type="MeshInstance3D" parent="Body/capybara"]
-transform = Transform3D(-1.09278e-07, -0.647048, 2.41481, 0, 2.41481, 0.647048, -2.5, 2.82833e-08, -1.05555e-07, 2.18112, -8.14005, -9.53398e-08)
+transform = Transform3D(-1.09278e-07, -0.647048, 2.41481, 1.54363e-17, 2.41481, 0.647048, -2.5, 2.82833e-08, -1.05555e-07, 0.0276441, -0.103206, -0.0171981)
 material_override = SubResource("StandardMaterial3D_g6k8r")
 skeleton = NodePath("../../..")
 script = ExtResource("4_yw30f")
