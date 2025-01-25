@@ -24,6 +24,6 @@ func finish(win: bool)-> void:
 	
 func restart_level() -> void:
 	gameOver = false
-	Globals.player.position = initial_player_position
+	Globals.scene_manager.reload_scene()
 	
 	
