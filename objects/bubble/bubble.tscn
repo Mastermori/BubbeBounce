@@ -1,7 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bfc57rext5mmp"]
+[gd_scene load_steps=12 format=3 uid="uid://bfc57rext5mmp"]
 
 [ext_resource type="Script" uid="uid://cn4s7j5af760u" path="res://objects/bubble/bubble.gd" id="1_5qxx4"]
 [ext_resource type="Shader" uid="uid://b2ylmgy6clo1p" path="res://objects/bubble/bubble.gdshader" id="1_no3pi"]
+[ext_resource type="AudioStream" uid="uid://drpn1fqb7h4sm" path="res://objects/bubble/bubble_sounds/BubbleLand1.wav" id="3_xjert"]
+[ext_resource type="AudioStream" uid="uid://crpncj2sh7vyj" path="res://objects/bubble/bubble_sounds/BubbleLand2.wav" id="4_gwryw"]
+[ext_resource type="AudioStream" uid="uid://b75mg6p6umnf5" path="res://objects/bubble/bubble_sounds/BubbleLand3.wav" id="5_sq3jk"]
+[ext_resource type="AudioStream" uid="uid://cx0pt18ur3vdr" path="res://objects/bubble/bubble_sounds/BubbleLand4.wav" id="6_l3iy3"]
+[ext_resource type="AudioStream" uid="uid://d2sqeduuqjdwl" path="res://objects/bubble/bubble_sounds/BubbleLand5.wav" id="7_ki17u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5qxx4"]
 render_priority = 0
@@ -19,9 +24,18 @@ material = SubResource("ShaderMaterial_5qxx4")
 [sub_resource type="SphereShape3D" id="SphereShape3D_no3pi"]
 radius = 0.25
 
-[node name="Bubble" type="Area3D"]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ud0le"]
+streams_count = 5
+stream_0/stream = ExtResource("3_xjert")
+stream_1/stream = ExtResource("4_gwryw")
+stream_2/stream = ExtResource("5_sq3jk")
+stream_3/stream = ExtResource("6_l3iy3")
+stream_4/stream = ExtResource("7_ki17u")
+
+[node name="Bubble" type="Area3D" node_paths=PackedStringArray("soundEmitter")]
 collision_layer = 0
 script = ExtResource("1_5qxx4")
+soundEmitter = NodePath("BubbleLandSoundEmitter")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_iwk3a")
@@ -39,6 +53,9 @@ shape = SubResource("SphereShape3D_no3pi")
 
 [node name="FadeTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="BubbleLandSoundEmitter" type="AudioStreamPlayer3D" parent="."]
+stream = SubResource("AudioStreamRandomizer_ud0le")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="FadeTimer" to="." method="_fade_out"]

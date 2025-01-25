@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cscpcll7v3oqy"]
+[gd_scene load_steps=7 format=3 uid="uid://cscpcll7v3oqy"]
 
 [ext_resource type="Script" uid="uid://kpysvafv4nea" path="res://levels/level.gd" id="1_ew5uy"]
 [ext_resource type="PackedScene" uid="uid://d284tnwpobnj4" path="res://player/player.tscn" id="1_wevqg"]
+[ext_resource type="PackedScene" uid="uid://dcjbujoi1wura" path="res://Music/music_player.tscn" id="3_63c5o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_80vhd"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -33,3 +34,7 @@ environment = SubResource("Environment_cwqvt")
 [node name="Player" parent="." instance=ExtResource("1_wevqg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.31421, 0)
 collision_layer = 3
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Player"]
+
+[node name="Music_Player" parent="Player/AudioListener3D" instance=ExtResource("3_63c5o")]

@@ -2,6 +2,8 @@ extends RayCast3D
 
 @export var bubble_scene: PackedScene
 
+@export var _soundEmitter: AudioStreamPlayer3D
+
 @onready var camera: Camera3D = $"../Camera3D"
 
 @onready var player: RigidBody3D = owner
@@ -32,3 +34,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		Globals.current_level.bubbles.add_child(bubble)
 		bubble.global_position = global_position
 		bubble.init_shoot(get_mouse_direction())
+		_playShootSound()
+
+func _playShootSound():
+	_soundEmitter.play(0)
