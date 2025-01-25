@@ -6,7 +6,7 @@ extends Node
 var current_level: Node3D
 var current_level_index: int = -1
 
-var levels: Array[String] = ["res://levels/test_level.tscn"]
+var levels: Array[PackedScene] = [preload("res://levels/test_level.tscn"), preload("res://levels/ben_01.tscn")]
 
 func _ready() -> void:
 	Globals.scene_manager = self
@@ -23,7 +23,7 @@ func switch_to_scene(sceneIndex: int) -> void:
 	_load_scene(sceneIndex)
 	
 func _load_scene(sceneIndex: int) -> void:
-	var scene = load(levels[sceneIndex]).instantiate()
+	var scene = levels[sceneIndex].instantiate()
 	current_level_index = sceneIndex
 	current_level = scene
 	main_menu.visible = false
@@ -37,7 +37,7 @@ func _unload_scene() -> void:
 
 func next_level() -> void:
 	switch_to_scene(current_level_index + 1)
-	
+
 func back_to_menu() -> void:
 	main_menu.visible = true
 	_unload_scene()

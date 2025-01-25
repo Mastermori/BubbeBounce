@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://d284tnwpobnj4"]
+[gd_scene load_steps=18 format=3 uid="uid://d284tnwpobnj4"]
 
 [ext_resource type="Script" uid="uid://m3pcsmljt22v" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="Script" uid="uid://b4rqce6gip4os" path="res://player/trajectory_visualizer.gd" id="2_boad6"]
 [ext_resource type="Shader" uid="uid://b2ylmgy6clo1p" path="res://objects/bubble/bubble.gdshader" id="2_qjkh3"]
 [ext_resource type="PackedScene" uid="uid://byedupy74niwm" path="res://player/bubble_gun/bubble_gun.tscn" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://cdbauf8vy4mv8" path="res://player/camera.gd" id="3_g1dw6"]
@@ -8,6 +9,14 @@
 [ext_resource type="Script" uid="uid://dayv0re0mj5oy" path="res://player/trail/trail3d.gd" id="4_yw30f"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_x4av3"]
+
+[sub_resource type="Gradient" id="Gradient_boad6"]
+offsets = PackedFloat32Array(0, 0.091954, 0.206897, 0.344828, 0.482759, 0.637931, 0.770115, 0.896552, 1)
+colors = PackedColorArray(0.87, 0.00869999, 0.482415, 1, 0.859165, 0.250636, 0.319091, 1, 0.846298, 0.400201, 0.224566, 1, 0.787126, 0.575311, 0.0784694, 1, 0.592654, 0.758301, 0.262581, 1, 0.466181, 0.876507, 0.664294, 1, 0.1222, 0.92637, 0.94, 1, 0.2646, 0.634223, 0.98, 1, 0.4233, 0.477527, 0.83, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_boad6"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g6k8r"]
 render_priority = 0
@@ -53,6 +62,17 @@ shape = SubResource("SphereShape3D_x4av3")
 debug_color = Color(0, 0.6, 0.701961, 1)
 debug_fill = false
 
+[node name="Trajectory" type="Node3D" parent="."]
+
+[node name="TrajectoryRay" type="RayCast3D" parent="Trajectory"]
+
+[node name="TrajectoryVisualizer" type="Node3D" parent="Trajectory"]
+script = ExtResource("2_boad6")
+color_gradient = SubResource("Gradient_boad6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Trajectory/TrajectoryVisualizer"]
+material_override = SubResource("StandardMaterial3D_boad6")
+
 [node name="Body" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Body"]
@@ -68,6 +88,7 @@ transform = Transform3D(-1.09278e-07, -0.647048, 2.41481, 1.54228e-17, 2.41481, 
 material_override = SubResource("StandardMaterial3D_g6k8r")
 skeleton = NodePath("../../..")
 script = ExtResource("4_yw30f")
+emit = false
 lifetime = 0.7
 base_width = 0.4
 width_profile = SubResource("Curve_yw30f")

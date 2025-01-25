@@ -6,9 +6,10 @@ var current := false
 
 @export var soundEmitter: AudioStreamPlayer3D
 @export var fade_timer_after_hit: float = .01
-@export var base_fade_timer: float = 6
-@export var growth_factor: float = 2
-@export var max_size: float = 10
+@export var base_fade_timer: float = 15
+@export var growth_factor: float = 1.1
+@export var max_size_multiplier: float = 3.5
+@export var base_size: float = 2.5
 
 @onready var collision_shape_3d: CollisionShape3D = $MeshInstance3D/StaticBody3D/CollisionShape3D
 @onready var fade_timer: Timer = $FadeTimer
@@ -26,24 +27,28 @@ func _process(delta: float) -> void:
 
 func grow(delta: float) -> void:
 	size += growth_factor * delta
-	scale = Vector3.ONE * size
-	if size >= max_size:
+	scale = Vector3.ONE * base_size * size
+	if size >= max_size_multiplier:
 		finish_growing()
 
 func start_growing(start_size: float = .3) -> void:
 	self.size = start_size
-	scale = Vector3.ONE * start_size
+	scale = Vector3.ONE * base_size * start_size
 	_playLandingSound()
 	current = true
 
 func finish_growing() -> void:
+	print(size)
 	current = false
 	collision_shape_3d.set_deferred("disabled", false)
-	fade_timer.start(base_fade_timer * size / 2)
+	fade_timer.start(clamp(base_fade_timer * size / 2, 5, 20))
 
 func _on_body_entered(body: PhysicsBody3D) -> void:
 	current = false
-	_fade_out()
+	finish_growing()
+	await get_tree().process_frame
+	await get_tree().process_frame
+	collision_shape_3d.set_deferred("disabled", true)
 
 func on_hit_by_player() -> void:
 	if fade_timer.time_left > fade_timer_after_hit:

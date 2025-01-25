@@ -13,6 +13,7 @@ var rotation_impulse: float = 0
 @onready var bounce_cooldown: Timer = $BounceCooldown
 @onready var camera: PlayerCamera = $Camera3D
 @onready var capybara: Node3D = $Body/capybara
+@onready var trail: Trail3D = $Body/capybara/Trail3D
 
 func _ready() -> void:
 	Globals.player = self
@@ -51,6 +52,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		collided_last_frame = false
 		velocity += Vector3.DOWN * gravity * gravity_multiplier * delta
+		$Trajectory/TrajectoryVisualizer.solve_path(Vector2(global_position.x, global_position.y), velocity.length(), Vector2.RIGHT.angle_to(Vector2(velocity.x, velocity.y)))
 	
 	if position.y < -10:
 		die()
@@ -60,9 +62,11 @@ func hit_bubble(bubble: Bubble, collision: KinematicCollision3D) -> void:
 	var collision_normal := collision.get_normal()
 	collision_normal.z = 0
 	collision_normal = collision_normal.normalized()
-	velocity = collision_normal * min(8, velocity.length() * 1.2 * bubble.size)
+	var bubble_multiplier := bubble.size if bubble.size < 1 else pow(bubble.size, 2)
+	velocity = collision_normal * min(8, velocity.length() * 1.2 * bubble_multiplier)
 	var angle_percent := Vector2.DOWN.angle_to(Vector2(collision_normal.x, collision_normal.y)) / (2 * PI)
 	rotation_impulse = clamp(rotation_impulse + sign(angle_percent) * pow(angle_percent, 2) * bubble.size, -1, 1)
+	trail.emit = velocity.length() > 6
 
 func die() -> void:
 	Globals.current_level.finish(false)
