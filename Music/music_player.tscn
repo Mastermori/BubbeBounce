@@ -1,8 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcjbujoi1wura"]
+[gd_scene load_steps=8 format=3 uid="uid://dcjbujoi1wura"]
 
-[ext_resource type="AudioStream" uid="uid://d11vy7gpr14ta" path="res://Music/MusicStreamPlaylist.tres" id="1_3oc1x"]
+[ext_resource type="AudioStream" uid="uid://r2u55dv0ityl" path="res://Music/bubble_song_stream.tres" id="1_3oc1x"]
+[ext_resource type="AudioStream" uid="uid://b4ehyvwbj0ofk" path="res://Music/BubbleLoop01.wav" id="3_08tv0"]
+[ext_resource type="AudioStream" uid="uid://cqjk15ibt2nfy" path="res://Music/BubbleLoop02.wav" id="4_eacft"]
+[ext_resource type="AudioStream" uid="uid://b33uaqj0r2wqp" path="res://Music/BubbleLoop03.wav" id="5_m85ba"]
+[ext_resource type="Script" uid="uid://u4cjlqir70t" path="res://Music/music_advancer.gd" id="6_psdlo"]
+[ext_resource type="AudioStream" uid="uid://nydbhkr78jvu" path="res://Music/BubbleLoop04.wav" id="6_xy4im"]
+[ext_resource type="AudioStream" uid="uid://bdon4nd0boauc" path="res://Music/BubbleLoop05.wav" id="7_i8wrj"]
 
-[node name="Music_Player" type="AudioStreamPlayer2D"]
+[node name="Music_Player" type="AudioStreamPlayer3D"]
 stream = ExtResource("1_3oc1x")
-volume_db = -16.953
-autoplay = true
+volume_db = -0.68
+script = ExtResource("6_psdlo")
+_loop_Elements = Array[Array]([[ExtResource("3_08tv0"), 0.5], [ExtResource("4_eacft"), 0.5], [ExtResource("5_m85ba"), 0.5], [ExtResource("6_xy4im"), 0.5], [ExtResource("7_i8wrj"), 0.5]])
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 19.2
+
+[connection signal="timeout" from="Timer" to="." method="_start_next_loop"]

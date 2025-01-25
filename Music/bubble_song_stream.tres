@@ -1,0 +1,25 @@
+[gd_resource type="AudioStreamInteractive" load_steps=6 format=3 uid="uid://r2u55dv0ityl"]
+
+[ext_resource type="AudioStream" uid="uid://b4ehyvwbj0ofk" path="res://Music/BubbleLoop01.wav" id="1_hu55h"]
+[ext_resource type="AudioStream" uid="uid://cqjk15ibt2nfy" path="res://Music/BubbleLoop02.wav" id="2_0hlst"]
+[ext_resource type="AudioStream" uid="uid://b33uaqj0r2wqp" path="res://Music/BubbleLoop03.wav" id="3_ynjdg"]
+[ext_resource type="AudioStream" uid="uid://nydbhkr78jvu" path="res://Music/BubbleLoop04.wav" id="4_iliei"]
+[ext_resource type="AudioStream" uid="uid://bdon4nd0boauc" path="res://Music/BubbleLoop05.wav" id="5_18kha"]
+
+[resource]
+clip_count = 5
+clip_0/name = &"BubbleLoop01.wav"
+clip_0/stream = ExtResource("1_hu55h")
+clip_0/auto_advance = 0
+clip_1/name = &"BubbleLoop02.wav"
+clip_1/stream = ExtResource("2_0hlst")
+clip_1/auto_advance = 0
+clip_2/name = &"BubbleLoop03.wav"
+clip_2/stream = ExtResource("3_ynjdg")
+clip_2/auto_advance = 0
+clip_3/name = &"BubbleLoop04.wav"
+clip_3/stream = ExtResource("4_iliei")
+clip_3/auto_advance = 0
+clip_4/name = &"BubbleLoop05.wav"
+clip_4/stream = ExtResource("5_18kha")
+clip_4/auto_advance = 0
