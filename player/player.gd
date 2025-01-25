@@ -55,6 +55,8 @@ func _physics_process(delta: float) -> void:
 func hit_bubble(bubble: Bubble, collision: KinematicCollision3D) -> void:
 	bubble.on_hit_by_player()
 	var collision_normal := collision.get_normal()
+	collision_normal.z = 0
+	collision_normal = collision_normal.normalized()
 	velocity = collision_normal * min(8, velocity.length() * 1.2 * bubble.size)
 	var angle_percent := Vector2.DOWN.angle_to(Vector2(collision_normal.x, collision_normal.y)) / (2 * PI)
 	rotation_impulse = clamp(rotation_impulse + sign(angle_percent) * pow(angle_percent, 2) * bubble.size, -1, 1)
