@@ -24,6 +24,6 @@ func finish(win: bool)-> void:
 	
 func restart_level() -> void:
 	gameOver = false
-r	Globals.scene_manager.reload_scene()
+	Globals.scene_manager.reload_scene()
 	
 	
