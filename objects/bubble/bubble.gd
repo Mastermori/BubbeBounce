@@ -39,11 +39,10 @@ func start_growing(start_size: float = .3) -> void:
 	_sound_emitter.start_grow_sound()
 
 func finish_growing() -> void:
-	print(size)
 	current = false
 	collision_shape_3d.set_deferred("disabled", false)
 	fade_timer.start(clamp(base_fade_timer * size / 2, 5, 20))
-	_sound_emitter.stop_grow_sound()
+	_sound_emitter.stop_grow_sound(size)
 
 func _on_body_entered(body: PhysicsBody3D) -> void:
 	current = false
@@ -61,3 +60,4 @@ func _fade_out() -> void:
 	tween.tween_property(self, "scale", Vector3.ONE * 1.6, .25).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN).from_current()
 	tween.parallel().tween_method(func (alpha): mesh_instance_3d.set_instance_shader_parameter("alpha_multipler", alpha), 1.0, 0.0, .25).set_ease(Tween.EASE_OUT)
 	tween.tween_callback(queue_free)
+	_sound_emitter.play_timeout_sound()
