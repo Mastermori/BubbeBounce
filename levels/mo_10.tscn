@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://kkcpyfht4o2l"]
+
+[ext_resource type="PackedScene" uid="uid://cscpcll7v3oqy" path="res://levels/base_level.tscn" id="1_i7dko"]
+[ext_resource type="PackedScene" uid="uid://bipytwm0ti8ap" path="res://platforms/table.tscn" id="2_8162s"]
+
+[node name="Mo10" instance=ExtResource("1_i7dko")]
+
+[node name="table" parent="Obstacles" index="0" instance=ExtResource("2_8162s")]
+transform = Transform3D(-3.88574e-08, 9.27885e-10, 0.835, 0.305717, 0.777021, 1.33633e-08, -0.777021, 0.305717, -3.6499e-08, 0, 0, 0)
+
+[node name="table2" parent="Obstacles" index="1" instance=ExtResource("2_8162s")]
+transform = Transform3D(-3.21097e-08, 7.66756e-10, 0.69, 0.252628, 0.64209, 1.10427e-08, -0.64209, 0.252628, -3.01609e-08, 0, 6.73352, 2.88089)
+
+[node name="Goal" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5787, 0, 0)
+
+[editable path="GameEndPopup"]
