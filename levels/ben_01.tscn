@@ -7,22 +7,22 @@
 [node name="Ben 01" instance=ExtResource("1_5qyrj")]
 
 [node name="IgTasse3" parent="Obstacles" index="0" instance=ExtResource("2_xx52a")]
-transform = Transform3D(-0.110228, 0.358078, -0.927162, -0.163107, -0.926717, -0.338515, -0.980432, 0.113914, 0.160556, 10.8716, -2.06425, -0.370535)
+transform = Transform3D(0.0139145, -0.209437, 0.977723, 0.146048, 0.967757, 0.205224, -0.98918, 0.139939, 0.0440547, 10.8716, -2.06425, -0.00135016)
 
 [node name="IgTasse" parent="Obstacles" index="1" instance=ExtResource("2_xx52a")]
 transform = Transform3D(0.131084, -0.659573, 0.740122, -0.607846, 0.536295, 0.585586, -0.78316, -0.526641, -0.33062, -0.116122, -1.96112, 0.540396)
 
 [node name="IgTasse2" parent="Obstacles" index="2" instance=ExtResource("2_xx52a")]
-transform = Transform3D(-0.147988, -0.0965263, 0.984267, 0.521557, -0.853201, -0.00525468, 0.840284, 0.512573, 0.176608, 21.5488, -1.54466, -0.352093)
+transform = Transform3D(0.70313, -0.0934157, 0.704898, -0.701599, 0.070037, 0.709122, -0.115612, -0.993161, -0.0162953, 21.5488, -1.54466, 0.232451)
 
 [node name="IgTasse4" parent="Obstacles" index="3" instance=ExtResource("2_xx52a")]
-transform = Transform3D(-0.110228, 0.358078, -0.927162, -0.163107, -0.926717, -0.338515, -0.980432, 0.113914, 0.160556, 4.67523, -3.13338, -0.370535)
+transform = Transform3D(-0.110228, 0.358078, -0.927162, -0.163107, -0.926717, -0.338515, -0.980432, 0.113914, 0.160556, 4.67523, -3.13338, 0.152477)
 
 [node name="IgTasse5" parent="Obstacles" index="4" instance=ExtResource("2_xx52a")]
 transform = Transform3D(-0.110228, 0.358078, -0.927162, -0.163107, -0.926717, -0.338515, -0.980432, 0.113914, 0.160556, 29.9302, 6.60415, -0.370535)
 
 [node name="IgTasse6" parent="Obstacles" index="5" instance=ExtResource("2_xx52a")]
-transform = Transform3D(-0.147988, -0.0965263, 0.984267, 0.521557, -0.853201, -0.00525468, 0.840284, 0.512573, 0.176608, 16.1391, -3.16758, -0.352093)
+transform = Transform3D(0.0646352, -0.0430749, 0.996979, 0.246645, -0.967382, -0.0577863, 0.966948, 0.249635, -0.0519027, 16.1391, -3.16758, -0.213648)
 
 [node name="star" parent="Obstacles" index="6" instance=ExtResource("3_hxp6r")]
 transform = Transform3D(-0.00455525, 0, 0.99999, -0.377643, 0.92595, -0.00172028, -0.92594, -0.377647, -0.00421794, 34.9669, 10.0911, -1.59506)
@@ -32,5 +32,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0615311, 2.31421, 0)
 
 [node name="Goal" parent="." index="5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.2394, 9.69289, 0)
+
+[node name="IgTasse" parent="." index="7" instance=ExtResource("2_xx52a")]
+transform = Transform3D(-0.021327, -0.649001, 0.760488, -0.220116, 0.745045, 0.629649, -0.975241, -0.153967, -0.158745, 16.3229, 6.73994, -0.254869)
 
 [editable path="GameEndPopup"]
