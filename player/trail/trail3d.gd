@@ -110,6 +110,7 @@ func _render_realtime() -> void:
 
 func _render_geometry(source: Array) -> void:
 	var points_count = source.size()
+	print("Source point size: ", source.size())
 	if points_count < 2:
 		return
 
@@ -256,6 +257,23 @@ func _emit(delta) -> void:
 	_temp_segment = _chaikin(_A, _B, _C)
 	_render_realtime()
 
+#Wahrscheinlich voller unnötigem Code, aber ich beschäftige mich keine Sekunde länger hiermit.
+func _refresh_all_points(delta) -> void:
+	var _transform :Transform3D = _target.global_transform
+	var point = Point.new(_transform, lifetime)
+	_A = point
+	_B = point
+	_C = point
+	_A.age = 0
+	_B.age = 0
+	_C.age = 0
+	clear_points()
+	_points.clear()
+	_temp_segment.clear()
+	_update_points()
+	points.resize(0)
+
+
 
 func _ready() -> void:
 	mesh = ImmediateMesh.new()
@@ -267,8 +285,12 @@ func _ready() -> void:
 
 func _process(delta) -> void:
 	if emit:
+		if visible == false:
+			visible = true
+			_refresh_all_points(delta)
 		_emit(delta)
 		return
+	visible = false
 		
 	if always_update:
 		# This is needed for alignment == view, so it can be updated every frame.
