@@ -1,38 +1,49 @@
 class_name Bubble
 extends Area3D
 
-var velocity := Vector3.ZERO
-var should_bounce := false
 var size := 1.0
+var current := false
 
 @export var soundEmitter: AudioStreamPlayer3D
 @export var fade_timer_after_hit: float = .01
+@export var base_fade_timer: float = 6
+@export var growth_factor: float = 2
+@export var max_size: float = 10
 
 @onready var collision_shape_3d: CollisionShape3D = $MeshInstance3D/StaticBody3D/CollisionShape3D
 @onready var fade_timer: Timer = $FadeTimer
 @onready var mesh_instance_3d: MeshInstance3D = $MeshInstance3D
+@onready var timer_label: Label3D = $TimerLabel
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _process(delta: float) -> void:
+	if current:
+		if Input.is_action_pressed("shoot_bubble"):
+			grow(delta)
+		else:
+			finish_growing()
+	else:
+		timer_label.text = "%.2f" % fade_timer.time_left
 
-func init_shoot(direction: Vector2, speed: float = .15, size: float = 1.0) -> void:
-	velocity = Vector3(direction.x, direction.y, 0) * speed * 1 / size
-	self.size = size
-	scale = Vector3.ONE * .3
+func grow(delta: float) -> void:
+	size += growth_factor * delta
+	scale = Vector3.ONE * size
+	if size >= max_size:
+		finish_growing()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
-	position += velocity
+func start_growing(start_size: float = .3) -> void:
+	self.size = start_size
+	scale = Vector3.ONE * start_size
+	_playLandingSound()
+	current = true
+
+func finish_growing() -> void:
+	current = false
+	collision_shape_3d.set_deferred("disabled", false)
+	fade_timer.start(base_fade_timer * size / 2)
 
 func _on_body_entered(body: PhysicsBody3D) -> void:
-	velocity = Vector3.ZERO
-	should_bounce = true
-	collision_shape_3d.set_deferred("disabled", false)
-	var tween := create_tween()
-	tween.tween_property(self, "scale", Vector3.ONE, .3).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE).from_current()
-	fade_timer.start()
-	_playLandingSound()
+	current = false
+	_fade_out()
 
 func on_hit_by_player() -> void:
 	if fade_timer.time_left > fade_timer_after_hit:

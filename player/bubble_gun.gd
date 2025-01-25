@@ -1,4 +1,4 @@
-extends Node3D
+extends RayCast3D
 
 @export var bubble_scene: PackedScene
 
@@ -30,10 +30,13 @@ func get_mouse_direction() -> Vector2:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("shoot_bubble"):
+		force_raycast_update()
+		if not is_colliding():
+			return
 		var bubble: Bubble = bubble_scene.instantiate()
 		Globals.current_level.bubbles.add_child(bubble)
-		bubble.global_position = global_position
-		bubble.init_shoot(get_mouse_direction())
+		bubble.global_position = get_collision_point()
+		bubble.start_growing()
 		_playShootSound()
 
 func _playShootSound():
