@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://44m8ypt2cdal"]
+[gd_scene load_steps=6 format=3 uid="uid://44m8ypt2cdal"]
 
 [ext_resource type="PackedScene" uid="uid://cscpcll7v3oqy" path="res://levels/base_level.tscn" id="1_5qyrj"]
 [ext_resource type="PackedScene" uid="uid://cut0lpewlcm1b" path="res://platforms/ig_tasse.tscn" id="2_xx52a"]
 [ext_resource type="PackedScene" uid="uid://bk7hcn5w7djt4" path="res://platforms/mandarin.tscn" id="4_ncsbc"]
 [ext_resource type="PackedScene" uid="uid://cd211bbdtqjl6" path="res://platforms/soap.tscn" id="4_vg47g"]
 [ext_resource type="PackedScene" uid="uid://db60xoj8iad6q" path="res://platforms/arrow_blue.glb" id="5_ncsbc"]
-[ext_resource type="PackedScene" uid="uid://ciramrx8gmf3e" path="res://platforms/star2.glb" id="6_kgi0p"]
 
 [node name="Ben 01" instance=ExtResource("1_5qyrj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0217457, 0, -0.000759125)
@@ -48,8 +47,5 @@ transform = Transform3D(0.615684, 0.0216034, 0, -0.020973, 0.634192, 0, 0, 0, 1,
 
 [node name="arrow_blue2" parent="." index="12" instance=ExtResource("5_ncsbc")]
 transform = Transform3D(0.99942, 0.0340448, 0, -0.0340448, 0.99942, 0, 0, 0, 1, 23.1719, 12.4473, -2.51477)
-
-[node name="star2" parent="." index="13" instance=ExtResource("6_kgi0p")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.0767, 9.68177, -1.30839)
 
 [editable path="GameEndPopup"]

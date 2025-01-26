@@ -4,9 +4,8 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bi1l8bkwdatec"
 path.s3tc="res://.godot/imported/Switch_Untitled-1.png-319821d9654843780db6ae31dbaeb564.s3tc.ctex"
-path.etc2="res://.godot/imported/Switch_Untitled-1.png-319821d9654843780db6ae31dbaeb564.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://platforms/models/Switch_Untitled-1.png"
-dest_files=["res://.godot/imported/Switch_Untitled-1.png-319821d9654843780db6ae31dbaeb564.s3tc.ctex", "res://.godot/imported/Switch_Untitled-1.png-319821d9654843780db6ae31dbaeb564.etc2.ctex"]
+dest_files=["res://.godot/imported/Switch_Untitled-1.png-319821d9654843780db6ae31dbaeb564.s3tc.ctex"]
 
 [params]
 

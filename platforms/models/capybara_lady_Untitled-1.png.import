@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://27ebbshis8v8"
-path.s3tc="res://.godot/imported/curry_Untitled-1.png-c866d1996c67c34c6abb8376113b242a.s3tc.ctex"
+uid="uid://de8svfusc45gs"
+path.s3tc="res://.godot/imported/capybara_lady_Untitled-1.png-b2ee1502afa311e36f9430569811a9bf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://platforms/models/curry_Untitled-1.png"
-dest_files=["res://.godot/imported/curry_Untitled-1.png-c866d1996c67c34c6abb8376113b242a.s3tc.ctex"]
+source_file="res://platforms/models/capybara_lady_Untitled-1.png"
+dest_files=["res://.godot/imported/capybara_lady_Untitled-1.png-b2ee1502afa311e36f9430569811a9bf.s3tc.ctex"]
 
 [params]
 
