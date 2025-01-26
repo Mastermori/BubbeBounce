@@ -9,9 +9,6 @@ extends Control
 
 @onready var back_button: Button = $Panel/Button
 
-func _ready() -> void:
-	open()
-
 func open() -> void:
 	visible = true
 

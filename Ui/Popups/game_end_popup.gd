@@ -55,9 +55,15 @@ func show_game_end(win: bool) -> void:
 		_game_end_emitter.get_stream_playback().switch_to_clip(0)
 
 func _on_back_to_menu() -> void:
+	visible = false
+	loseContent.visible = false
+	winContent.visible = false
 	Globals.scene_manager.back_to_menu()
 
 func _on_next_level() -> void:
+	visible = false
+	loseContent.visible = false
+	winContent.visible = false
 	Globals.scene_manager.next_level()
 
 func _on_try_again() -> void:
