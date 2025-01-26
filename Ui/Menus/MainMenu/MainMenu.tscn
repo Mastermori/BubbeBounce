@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://3aewj2ir0ogj"]
+[gd_scene load_steps=11 format=3 uid="uid://3aewj2ir0ogj"]
 
-[ext_resource type="Texture2D" uid="uid://c4i5qdplcm4c3" path="res://Bubbe_MainMenu_Artwork.png" id="1_oj5fm"]
 [ext_resource type="Script" uid="uid://cchnhtu1uhvpd" path="res://Ui/Menus/MainMenu/main_menu.gd" id="1_wt5kd"]
-[ext_resource type="StyleBox" uid="uid://7f2t1a81pinp" path="res://Ui/Buttons/ButtonOverride.tres" id="2_2s0o5"]
-[ext_resource type="StyleBox" uid="uid://p0l7xp251m20" path="res://Ui/Buttons/ButtonHoverOverride.tres" id="2_uimj6"]
-[ext_resource type="StyleBox" uid="uid://petff8t71cy4" path="res://Ui/Buttons/ButtonPressedOverride.tres" id="3_bu4cc"]
+[ext_resource type="Texture2D" uid="uid://dv1656ostsmfd" path="res://Art/BubbeBounce_TitleScreen.png" id="2_4klre"]
+[ext_resource type="StyleBox" uid="uid://bsyj041eryun0" path="res://Ui/Buttons/PlayButtonHoverOverwrite.tres" id="3_4apu2"]
+[ext_resource type="StyleBox" uid="uid://twacht3v3pid" path="res://Ui/Buttons/PlayButtonNormalOverwrite.tres" id="4_4klre"]
+[ext_resource type="StyleBox" uid="uid://d0kd4hhkj4bcg" path="res://Ui/Buttons/PlayButtonPressedOverwrite.tres" id="4_o65am"]
+[ext_resource type="StyleBox" uid="uid://028mf2hhmg37" path="res://Ui/Buttons/LevelSelectButtonHoverOverwrite.tres" id="6_ojike"]
+[ext_resource type="StyleBox" uid="uid://bqrumrheqj4p" path="res://Ui/Buttons/LevelSelectButtonPressedOverwrite.tres" id="7_4ebfr"]
+[ext_resource type="StyleBox" uid="uid://lf4dcnoac1hx" path="res://Ui/Buttons/LevelSelectButtonNormalOverwrite.tres" id="8_x64rm"]
+[ext_resource type="PackedScene" uid="uid://yb5ijpqkpjko" path="res://Ui/Menus/LevelSelection/LevelSelectionMenu.tscn" id="9_4ebfr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2s0o5"]
-texture = ExtResource("1_oj5fm")
+texture = ExtResource("2_4klre")
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -27,44 +31,40 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_2s0o5")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 7
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -155.5
-offset_top = -140.0
-offset_right = 155.5
-offset_bottom = 140.0
+anchor_bottom = 1.0
+offset_left = -369.0
+offset_top = -240.0
+offset_right = 366.0
+offset_bottom = -61.0
 grow_horizontal = 2
-grow_vertical = 2
+grow_vertical = 0
+theme_override_constants/separation = 60
 
-[node name="PlayButton" type="Button" parent="Panel/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 35
-theme_override_styles/hover = ExtResource("2_uimj6")
-theme_override_styles/pressed = ExtResource("3_bu4cc")
-theme_override_styles/normal = ExtResource("2_2s0o5")
-text = "Play!"
+theme_override_styles/hover = ExtResource("3_4apu2")
+theme_override_styles/pressed = ExtResource("4_o65am")
+theme_override_styles/normal = ExtResource("4_4klre")
+text = "                           "
+icon_alignment = 1
 
-[node name="LevelSelection" type="Button" parent="Panel/VBoxContainer"]
+[node name="LevelSelection" type="Button" parent="Panel/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 35
-theme_override_styles/hover = ExtResource("2_uimj6")
-theme_override_styles/pressed = ExtResource("3_bu4cc")
-theme_override_styles/normal = ExtResource("2_2s0o5")
-text = "Level Selection
-"
+theme_override_styles/hover = ExtResource("6_ojike")
+theme_override_styles/pressed = ExtResource("7_4ebfr")
+theme_override_styles/normal = ExtResource("8_x64rm")
+text = "                                                "
 
-[node name="Credits" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 35
-theme_override_styles/hover = ExtResource("2_uimj6")
-theme_override_styles/pressed = ExtResource("3_bu4cc")
-theme_override_styles/normal = ExtResource("2_2s0o5")
-text = "Credits"
+[node name="LevelSelectionMenu" parent="." instance=ExtResource("9_4ebfr")]
+visible = false
+layout_mode = 1

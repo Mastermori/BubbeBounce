@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=3 uid="uid://yb5ijpqkpjko"]
+
+[ext_resource type="Script" uid="uid://ni8v7ig151yj" path="res://Ui/Menus/LevelSelection/level_selection_menu.gd" id="1_jeuq8"]
+[ext_resource type="Texture2D" uid="uid://dxj1pvk0eubyr" path="res://Art/BubbeBounce_Background.png" id="1_mikup"]
+[ext_resource type="Texture2D" uid="uid://dfjusrfocxiwf" path="res://Art/BubbeBounce_1_scaled.png" id="2_126y7"]
+[ext_resource type="Texture2D" uid="uid://b0r0mys4cq4qi" path="res://Art/BubbeBounce_2_scaled.png" id="3_4lb67"]
+[ext_resource type="Texture2D" uid="uid://cfmrxm1ajm523" path="res://Art/BubbeBounce_3_scaled.png" id="4_jeuq8"]
+[ext_resource type="Texture2D" uid="uid://bl861ir3lhio" path="res://Art/BubbeBounce_4_scaled.png" id="5_yunyb"]
+[ext_resource type="Texture2D" uid="uid://cj3iulqru417u" path="res://Art/BubbeBounce_5_scaled.png" id="6_bml7s"]
+[ext_resource type="Texture2D" uid="uid://fvbg83wfpfrl" path="res://Art/BubbeBounce_Arrow_scaled.png" id="7_4lb67"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_soudp"]
+texture = ExtResource("1_mikup")
+
+[node name="LevelSelectionMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jeuq8")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_soudp")
+
+[node name="GridContainer" type="GridContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -296.5
+offset_top = -157.5
+offset_right = 296.5
+offset_bottom = 157.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 100
+theme_override_constants/v_separation = 50
+columns = 3
+
+[node name="Button" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+icon = ExtResource("2_126y7")
+flat = true
+metadata/level = 0
+
+[node name="Button2" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+icon = ExtResource("3_4lb67")
+flat = true
+metadata/level = 1
+
+[node name="Button3" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+icon = ExtResource("4_jeuq8")
+flat = true
+metadata/level = 2
+
+[node name="Button4" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+icon = ExtResource("5_yunyb")
+flat = true
+metadata/level = 3
+
+[node name="Button5" type="Button" parent="Panel/GridContainer"]
+layout_mode = 2
+icon = ExtResource("6_bml7s")
+flat = true
+metadata/level = 4
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -166.0
+offset_right = 228.0
+offset_bottom = -21.0
+grow_vertical = 0
+icon = ExtResource("7_4lb67")
+flat = true

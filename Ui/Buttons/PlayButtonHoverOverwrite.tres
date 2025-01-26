@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bsyj041eryun0"]
+
+[ext_resource type="Texture2D" uid="uid://c3katxyy4hblo" path="res://Art/BubbeBounce_PlayButton_scaled.png" id="1_qhjc2"]
+
+[resource]
+texture = ExtResource("1_qhjc2")
+modulate_color = Color(1, 0.909804, 1, 1)

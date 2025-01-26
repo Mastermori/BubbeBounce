@@ -1,0 +1,6 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bqb6swkhys6l1"]
+
+[ext_resource type="Texture2D" uid="uid://ch57v28l7yi38" path="res://Art/BubbeBounce_PlayButton.png" id="1_bxdp2"]
+
+[resource]
+texture = ExtResource("1_bxdp2")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4i5qdplcm4c3"
-path="res://.godot/imported/Bubbe_MainMenu_Artwork.png-ddc0788f2f36d7542bd239833f2c515d.ctex"
+uid="uid://b0r0mys4cq4qi"
+path="res://.godot/imported/BubbeBounce_2_scaled.png-a63b69bece889033a85a47249334827e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bubbe_MainMenu_Artwork.png"
-dest_files=["res://.godot/imported/Bubbe_MainMenu_Artwork.png-ddc0788f2f36d7542bd239833f2c515d.ctex"]
+source_file="res://Art/BubbeBounce_2_scaled.png"
+dest_files=["res://.godot/imported/BubbeBounce_2_scaled.png-a63b69bece889033a85a47249334827e.ctex"]
 
 [params]
 
