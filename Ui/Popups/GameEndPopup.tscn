@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://d04wc2xd0evxd"]
+[gd_scene load_steps=25 format=3 uid="uid://d04wc2xd0evxd"]
 
 [ext_resource type="Script" uid="uid://d3a6wdn8vtdyi" path="res://Ui/Popups/game_end_popup.gd" id="1_yfwdu"]
 [ext_resource type="Texture2D" uid="uid://c7tco241pp6wg" path="res://Art/BubbeBounce_WinScreen.png" id="2_bl6he"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://2ke6011gqbli" path="res://Ui/Popups/LoseWinSounds/Grieving_Capybara_01-004.wav" id="5_gw7je"]
 [ext_resource type="Texture2D" uid="uid://bnqx1xdhg752w" path="res://Art/BubbeBounce_BackToMenuHover_scaled.png" id="6_xq8sd"]
 [ext_resource type="AudioStream" uid="uid://djwg7hkeuppk3" path="res://Ui/Popups/LoseWinSounds/Happy_Capybara_01-250125_2130-001.wav" id="6_ytwqb"]
+[ext_resource type="Texture2D" uid="uid://bs662dgjwc7q1" path="res://Art/BubbeBounce_LoseScreen.png" id="7_b32i0"]
 [ext_resource type="AudioStream" uid="uid://c1bewv51nrg7f" path="res://Ui/Popups/LoseWinSounds/Happy_Capybara_01-250125_2130-002.wav" id="7_exlv5"]
 [ext_resource type="AudioStream" uid="uid://xd1djx2phhtd" path="res://Ui/Popups/LoseWinSounds/Happy_Capybara_01-250125_2130-003.wav" id="8_6df44"]
 [ext_resource type="AudioStream" uid="uid://bgmavau55mcuu" path="res://Ui/Popups/LoseWinSounds/Happy_Capybara_01-250125_2130-004.wav" id="9_mgjmm"]
@@ -19,8 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://ys4mt238443v" path="res://Art/BubbeBounce_TryAgain_scaled.png" id="17_b32i0"]
 [ext_resource type="Texture2D" uid="uid://cyko4741ylrmn" path="res://Art/BubbeBounce_TryAgainHover_scaled.png" id="18_f5j8o"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eucqn"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bl6he"]
 texture = ExtResource("2_bl6he")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f5j8o"]
+texture = ExtResource("7_b32i0")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ytwqb"]
 streams_count = 4
@@ -65,7 +69,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_eucqn")
+theme_override_styles/panel = SubResource("StyleBoxTexture_bl6he")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="WinContent"]
 layout_mode = 1
@@ -101,7 +105,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_eucqn")
+theme_override_styles/panel = SubResource("StyleBoxTexture_f5j8o")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="LoseContent"]
 layout_mode = 1
