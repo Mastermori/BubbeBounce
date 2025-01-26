@@ -40,13 +40,16 @@ transform = Transform3D(0.972317, -0.233666, 0, 0.198795, 0.827213, -0.525546, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.304356, 2.03744, 0)
 
 [node name="Goal" parent="." index="5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7658, 6.67108, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.302, 6.67108, 0)
 
 [node name="CollisionShape3D" parent="Goal" index="0"]
 transform = Transform3D(1.41264, 1.27889, 0, -1.35629, 1.33203, 0, 0, 0, 1, 50.9506, 7.04236, -0.152416)
 
-[node name="star" parent="Goal" index="1"]
-transform = Transform3D(-0.0412502, -0.0026505, 0.892841, 0.00204528, 0.79198, 0.00306893, -0.997051, 0.00173428, -0.0369325, 51.0275, 6.98914, -1.38441)
+[node name="capybara_lady" parent="Goal" index="1"]
+transform = Transform3D(0.504371, 0.0378402, -0.122508, -0.041462, 0.637318, -0.0546955, 0.10517, 0.0697829, 0.565957, 51.1897, 7.09657, -1.3811)
+
+[node name="star" parent="Goal" index="2"]
+transform = Transform3D(-0.0412502, -0.0026505, 0.892841, -0.891811, 0.354252, -0.0317012, -0.445856, -0.708337, -0.0191953, 51.0275, 6.2957, -1.62464)
 
 [node name="Switch" parent="." index="7" instance=ExtResource("8_wndkh")]
 transform = Transform3D(-0.0506298, 0.454154, 0.889483, 0.0160346, 0.89088, -0.453955, -0.998589, -0.008721, -0.0523873, 60.0007, -9.63342, -0.338345)

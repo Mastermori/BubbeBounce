@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://gq6v5aqgvewb"]
+[gd_scene load_steps=5 format=3 uid="uid://gq6v5aqgvewb"]
 
 [ext_resource type="Script" uid="uid://l7hfyyrdbjeb" path="res://objects/goal.gd" id="1_mtdsc"]
+[ext_resource type="PackedScene" uid="uid://bku8fvb38hd7u" path="res://platforms/models/capybara_lady.glb" id="2_2y4al"]
 [ext_resource type="PackedScene" uid="uid://bnv8gdwbstnq5" path="res://platforms/star.tscn" id="2_ke5pa"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kdloh"]
@@ -15,7 +16,10 @@ transform = Transform3D(0.869546, 0, 0, 0, 1.82613, 0, 0, 0, 1.97235, -0.101305,
 shape = SubResource("BoxShape3D_kdloh")
 debug_color = Color(0, 1, 0, 1)
 
+[node name="capybara_lady" parent="." instance=ExtResource("2_2y4al")]
+transform = Transform3D(-0.332877, -0.0793822, -0.439122, -0.041462, 0.637318, -0.0546955, 0.393247, 0, -0.377476, 1.15954, 0.0032258, -0.0011611)
+
 [node name="star" parent="." instance=ExtResource("2_ke5pa")]
-transform = Transform3D(0.997906, 0, 0, 0, 0.791986, 0, 0, 0, 0.89361, 1.32973, 0, -0.16497)
+transform = Transform3D(0.347581, 0.742391, 0, -0.935416, 0.275857, 0, 0, 0, 0.89361, 1.32973, -0.954977, -0.0351828)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
