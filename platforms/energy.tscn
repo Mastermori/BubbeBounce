@@ -7,9 +7,6 @@ data = PackedVector3Array(-1.0066, 2.1958, -0.8415, -1.2323, 2.2739, -0.2149, -1
 
 [node name="Energy" instance=ExtResource("1_v6n5t")]
 
-[node name="Cylinder" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
 [node name="StaticBody3D" type="StaticBody3D" parent="Cylinder" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Cylinder/StaticBody3D" index="0"]
