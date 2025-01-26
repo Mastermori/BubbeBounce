@@ -69,7 +69,7 @@ one_shot = true
 
 [node name="BubbleLandSoundEmitter" type="AudioStreamPlayer3D" parent="."]
 stream = SubResource("AudioStreamRandomizer_ud0le")
-volume_db = -20.815
+volume_db = -11.509
 script = ExtResource("4_euikj")
 
 [node name="BubbleEndGrowEmitter" type="AudioStreamPlayer3D" parent="BubbleLandSoundEmitter"]
