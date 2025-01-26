@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://d284tnwpobnj4"]
 
 [ext_resource type="Script" uid="uid://m3pcsmljt22v" path="res://player/player.gd" id="1_rkbax"]
-[ext_resource type="Script" path="res://player/trajectory_visualizer.gd" id="2_boad6"]
+[ext_resource type="Script" uid="uid://b4rqce6gip4os" path="res://player/trajectory_visualizer.gd" id="2_boad6"]
 [ext_resource type="Shader" uid="uid://b2ylmgy6clo1p" path="res://objects/bubble/bubble.gdshader" id="2_qjkh3"]
 [ext_resource type="PackedScene" uid="uid://byedupy74niwm" path="res://player/bubble_gun/bubble_gun.tscn" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://cdbauf8vy4mv8" path="res://player/camera.gd" id="3_g1dw6"]
