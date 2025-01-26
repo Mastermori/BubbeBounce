@@ -90,5 +90,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+#Builds
+/builds
+
 # End of https://www.toptal.com/developers/gitignore/api/godot,macos,windows,linux
 
