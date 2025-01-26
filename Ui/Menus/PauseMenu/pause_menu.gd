@@ -1,7 +1,7 @@
 extends Control
 
-@onready var continueButton: Button = $Panel/VBoxContainer/Continue
-@onready var backToMenuButton: Button = $Panel/VBoxContainer/BackToMenu
+@onready var continueButton: TextureButton = $Panel/VBoxContainer/Continue
+@onready var backToMenuButton: TextureButton = $Panel/VBoxContainer/BackToMenu
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_released("ui_cancel"):
