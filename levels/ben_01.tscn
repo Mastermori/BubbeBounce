@@ -1,26 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://44m8ypt2cdal"]
+[gd_scene load_steps=7 format=3 uid="uid://44m8ypt2cdal"]
 
 [ext_resource type="PackedScene" uid="uid://cscpcll7v3oqy" path="res://levels/base_level.tscn" id="1_5qyrj"]
 [ext_resource type="PackedScene" uid="uid://cut0lpewlcm1b" path="res://platforms/ig_tasse.tscn" id="2_xx52a"]
 [ext_resource type="PackedScene" uid="uid://bk7hcn5w7djt4" path="res://platforms/mandarin.tscn" id="4_ncsbc"]
 [ext_resource type="PackedScene" uid="uid://cd211bbdtqjl6" path="res://platforms/soap.tscn" id="4_vg47g"]
+[ext_resource type="PackedScene" uid="uid://db60xoj8iad6q" path="res://platforms/arrow_blue.glb" id="5_ncsbc"]
+[ext_resource type="PackedScene" uid="uid://ciramrx8gmf3e" path="res://platforms/star2.glb" id="6_kgi0p"]
 
 [node name="Ben 01" instance=ExtResource("1_5qyrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0217457, 0, -0.000759125)
 
 [node name="IgTasse" parent="Obstacles" index="0" instance=ExtResource("2_xx52a")]
-transform = Transform3D(0.131084, -0.659573, 0.740122, -0.607846, 0.536295, 0.585586, -0.78316, -0.526641, -0.33062, -0.116122, -1.96112, 0.540396)
+transform = Transform3D(0.300891, -0.89116, 0.339557, -0.809359, -0.0503114, 0.585155, -0.504383, -0.450891, -0.736407, -1.75161, -1.94864, 0.540396)
 
 [node name="IgTasse2" parent="Obstacles" index="1" instance=ExtResource("2_xx52a")]
 transform = Transform3D(0.70313, -0.0934157, 0.704898, -0.701599, 0.070037, 0.709122, -0.115612, -0.993161, -0.0162953, 21.5488, -1.54466, 0.232451)
 
 [node name="IgTasse4" parent="Obstacles" index="2" instance=ExtResource("2_xx52a")]
-transform = Transform3D(-0.110228, 0.358078, -0.927162, -0.163107, -0.926717, -0.338515, -0.980432, 0.113914, 0.160556, 4.67523, -3.13338, 0.152477)
+transform = Transform3D(-0.0506671, 0.350524, -0.935182, -0.163107, -0.926717, -0.338515, -0.985307, 0.135384, 0.104128, 4.67523, -3.13338, 0.152477)
 
 [node name="IgTasse5" parent="Obstacles" index="3" instance=ExtResource("2_xx52a")]
-transform = Transform3D(-0.110228, 0.358078, -0.927162, -0.163107, -0.926717, -0.338515, -0.980432, 0.113914, 0.160556, 29.9302, 6.60415, -0.370535)
+transform = Transform3D(-0.0105505, 0.344728, -0.938643, -0.163107, -0.926717, -0.338515, -0.986552, 0.149529, 0.0660058, 29.9302, 6.60415, -0.104007)
 
 [node name="IgTasse6" parent="Obstacles" index="4" instance=ExtResource("2_xx52a")]
-transform = Transform3D(0.0646352, -0.0430749, 0.996979, 0.246645, -0.967382, -0.0577863, 0.966948, 0.249635, -0.0519027, 16.1391, -3.16758, -0.213648)
+transform = Transform3D(0.0653404, -0.0425382, 0.996956, 0.245713, -0.967642, -0.0573914, 0.967138, 0.248715, -0.0527739, 16.1391, -3.16758, -0.213648)
 
 [node name="Player" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0615311, 2.31421, 0)
@@ -32,9 +35,21 @@ transform = Transform3D(0.0167367, -0.00462511, 0.999849, 7.74098e-05, 0.999989,
 transform = Transform3D(-0.021327, -0.649001, 0.760488, -0.220116, 0.745045, 0.629649, -0.975241, -0.153967, -0.158745, 16.3229, 6.73994, -0.254869)
 
 [node name="soap" parent="." index="8" instance=ExtResource("4_vg47g")]
-transform = Transform3D(110.523, 0, 0, 0, 116.072, 0, 0, 0, 1, 3.25978, 1.88447, -37.8587)
+transform = Transform3D(151.298, 73.6361, 0, -60.3099, 184.73, 0, 0, 0, 1, 56.183, 79.1504, -38.3661)
 
-[node name="mandarin" parent="." index="9" instance=ExtResource("4_ncsbc")]
-transform = Transform3D(0.811115, -0.375066, -0.448797, 0, 0.767322, -0.641262, 0.584887, 0.520137, 0.622386, 10.7264, -2.83348, 0.0215201)
+[node name="soap2" parent="." index="9" instance=ExtResource("4_vg47g")]
+transform = Transform3D(151.742, 52.373, 0.250354, -55.9816, 171.472, 0.372, -19.2028, -86.0331, 0.893834, 81.5753, -3.11983, -63.652)
+
+[node name="mandarin" parent="." index="10" instance=ExtResource("4_ncsbc")]
+transform = Transform3D(0.811115, -0.375066, -0.448797, 0, 0.767322, -0.641262, 0.584887, 0.520137, 0.622386, 10.7462, -0.396652, 0.0215201)
+
+[node name="arrow_blue" parent="." index="11" instance=ExtResource("5_ncsbc")]
+transform = Transform3D(0.615684, 0.0216034, 0, -0.020973, 0.634192, 0, 0, 0, 1, -4.27326, 3.01588, -1.9769)
+
+[node name="arrow_blue2" parent="." index="12" instance=ExtResource("5_ncsbc")]
+transform = Transform3D(0.99942, 0.0340448, 0, -0.0340448, 0.99942, 0, 0, 0, 1, 23.1719, 12.4473, -2.51477)
+
+[node name="star2" parent="." index="13" instance=ExtResource("6_kgi0p")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.0767, 9.68177, -1.30839)
 
 [editable path="GameEndPopup"]

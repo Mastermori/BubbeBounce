@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlvbgyt6wh745"]
+[gd_scene load_steps=5 format=3 uid="uid://dlvbgyt6wh745"]
 
 [ext_resource type="PackedScene" uid="uid://cscpcll7v3oqy" path="res://levels/base_level.tscn" id="1_088yb"]
 [ext_resource type="PackedScene" uid="uid://caplnvsjfu7u5" path="res://platforms/marker.tscn" id="2_8vyl6"]
 [ext_resource type="PackedScene" uid="uid://c8unmwkipdmt6" path="res://platforms/curry.tscn" id="3_8vyl6"]
+[ext_resource type="PackedScene" uid="uid://c32lu1vox76uo" path="res://platforms/arrow_pink.glb" id="4_om2h0"]
 
 [node name="BaseLevel" instance=ExtResource("1_088yb")]
 
@@ -52,6 +53,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.36506, 8.85975, 0)
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.69912, 3.29031, 0)
 
 [node name="curry" parent="." index="7" instance=ExtResource("3_8vyl6")]
-transform = Transform3D(-43.6404, 0.00327066, 0.0110063, 0, 0.0803033, -41.6356, -0.143196, -0.996765, -3.35429, 13.6278, 2.32868, -6.78921)
+transform = Transform3D(-43.6404, 0.00327066, 0.0110063, 0, 0.0803033, -41.6356, -0.143196, -0.996765, -3.35429, 13.6278, -30.9841, -6.78921)
+
+[node name="arrow_pink2" parent="." index="8" instance=ExtResource("4_om2h0")]
+transform = Transform3D(-0.655395, 0.0013673, 0, -0.00123538, -0.725379, 0, 0, 0, 1, 18.6591, 3.34444, -2.10175)
+
+[node name="arrow_pink3" parent="." index="9" instance=ExtResource("4_om2h0")]
+transform = Transform3D(0.00653145, 0.725344, 0, -0.655363, 0.0072289, 0, 0, 0, 1, 14.1738, 11.0528, -2.10175)
 
 [editable path="GameEndPopup"]
