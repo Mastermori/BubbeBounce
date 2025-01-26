@@ -1,13 +1,14 @@
-[gd_scene load_steps=28 format=3 uid="uid://d284tnwpobnj4"]
+[gd_scene load_steps=29 format=3 uid="uid://d284tnwpobnj4"]
 
 [ext_resource type="Script" uid="uid://m3pcsmljt22v" path="res://player/player.gd" id="1_rkbax"]
-[ext_resource type="Script" uid="uid://b4rqce6gip4os" path="res://player/trajectory_visualizer.gd" id="2_boad6"]
+[ext_resource type="Script" path="res://player/trajectory_visualizer.gd" id="2_boad6"]
 [ext_resource type="Shader" uid="uid://b2ylmgy6clo1p" path="res://objects/bubble/bubble.gdshader" id="2_qjkh3"]
 [ext_resource type="PackedScene" uid="uid://byedupy74niwm" path="res://player/bubble_gun/bubble_gun.tscn" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://cdbauf8vy4mv8" path="res://player/camera.gd" id="3_g1dw6"]
 [ext_resource type="PackedScene" uid="uid://mhp0mupwxqv2" path="res://player/model/capybara.glb" id="3_g6k8r"]
 [ext_resource type="Script" uid="uid://dayv0re0mj5oy" path="res://player/trail/trail3d.gd" id="4_yw30f"]
 [ext_resource type="PackedScene" uid="uid://bpat8ro0kbjy5" path="res://platforms/models/crosshair.glb" id="8_rgyib"]
+[ext_resource type="PackedScene" uid="uid://by7345xdrc4mu" path="res://platforms/models/turtle.glb" id="9_hg6s5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_x4av3"]
 
@@ -157,7 +158,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465172, 0, 0)
 
 [node name="Crosshair" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465172, 0, 0)
-visible = false
 collision_layer = 0
 collision_mask = 0
 
@@ -175,7 +175,11 @@ mesh = SubResource("SphereMesh_hg6s5")
 skeleton = NodePath("../../CollisionShape3D")
 
 [node name="crosshair" parent="Crosshair/Body" instance=ExtResource("8_rgyib")]
-transform = Transform3D(-8.98703e-09, 0, -0.11105, 0, 0.11503, 0, 0.205599, 0, -4.85417e-09, -8.20756e-05, -0.0148597, -0.0230055)
+transform = Transform3D(-1.24307e-08, 0, -0.191732, 0, 0.186473, 0, 0.28438, 0, -8.3809e-09, -0.00264555, -0.0148597, -0.0230055)
+visible = false
+
+[node name="turtle" parent="Crosshair/Body" instance=ExtResource("9_hg6s5")]
+transform = Transform3D(0.479422, 0.0271344, 0.121547, -5.31428e-08, 0.391264, -0.125835, -0.128461, 0.101267, 0.453621, 0.0151197, 0.00549809, 0)
 
 [node name="capybara" parent="Crosshair/Body" instance=ExtResource("3_g6k8r")]
 transform = Transform3D(-6.77251e-09, -5.78195e-11, -0.15, -0.038823, 0.144889, 1.69701e-09, 0.144889, 0.038823, -6.55671e-09, 0, 0, 0)
