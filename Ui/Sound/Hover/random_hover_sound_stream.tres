@@ -1,0 +1,13 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=5 format=3 uid="uid://k1fuaptiwtft"]
+
+[ext_resource type="AudioStream" uid="uid://d2r1tnlv26aje" path="res://Ui/Sound/Hover/Hover03-250126_1127-001.wav" id="1_m8lfl"]
+[ext_resource type="AudioStream" uid="uid://b3a7412weayhk" path="res://Ui/Sound/Hover/Hover03-250126_1127-002.wav" id="2_fr4tw"]
+[ext_resource type="AudioStream" uid="uid://de3qjhnhyesn8" path="res://Ui/Sound/Hover/Hover03-250126_1127-003.wav" id="3_18awb"]
+[ext_resource type="AudioStream" uid="uid://bpfdiivk6ox1s" path="res://Ui/Sound/Hover/Hover03-250126_1127-004.wav" id="4_kjm5o"]
+
+[resource]
+streams_count = 4
+stream_0/stream = ExtResource("1_m8lfl")
+stream_1/stream = ExtResource("2_fr4tw")
+stream_2/stream = ExtResource("3_18awb")
+stream_3/stream = ExtResource("4_kjm5o")

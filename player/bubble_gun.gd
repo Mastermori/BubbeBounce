@@ -22,9 +22,11 @@ func _physics_process(delta: float) -> void:
 	rotation = Vector3(0, 0, direction2D.angle())
 	position = initial_position.rotated(Vector3(0, 0, 1), direction2D.angle())
 	if not is_colliding():
+		crosshair.visible = false
 		return
 	crosshair.global_position.x = get_collision_point().x
 	crosshair.global_position.y = get_collision_point().y
+	crosshair.visible = true
 	
 
 func get_mouse_direction() -> Vector2:
