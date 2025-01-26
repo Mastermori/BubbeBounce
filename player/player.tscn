@@ -1,12 +1,13 @@
-[gd_scene load_steps=27 format=3 uid="uid://d284tnwpobnj4"]
+[gd_scene load_steps=28 format=3 uid="uid://d284tnwpobnj4"]
 
 [ext_resource type="Script" uid="uid://m3pcsmljt22v" path="res://player/player.gd" id="1_rkbax"]
-[ext_resource type="Script" uid="uid://b4rqce6gip4os" path="res://player/trajectory_visualizer.gd" id="2_boad6"]
+[ext_resource type="Script" path="res://player/trajectory_visualizer.gd" id="2_boad6"]
 [ext_resource type="Shader" uid="uid://b2ylmgy6clo1p" path="res://objects/bubble/bubble.gdshader" id="2_qjkh3"]
 [ext_resource type="PackedScene" uid="uid://byedupy74niwm" path="res://player/bubble_gun/bubble_gun.tscn" id="2_rkbax"]
 [ext_resource type="Script" uid="uid://cdbauf8vy4mv8" path="res://player/camera.gd" id="3_g1dw6"]
 [ext_resource type="PackedScene" uid="uid://mhp0mupwxqv2" path="res://player/model/capybara.glb" id="3_g6k8r"]
 [ext_resource type="Script" uid="uid://dayv0re0mj5oy" path="res://player/trail/trail3d.gd" id="4_yw30f"]
+[ext_resource type="PackedScene" uid="uid://bpat8ro0kbjy5" path="res://platforms/models/crosshair.glb" id="8_rgyib"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_x4av3"]
 
@@ -171,6 +172,10 @@ material_override = SubResource("ShaderMaterial_rgyib")
 transparency = 1.0
 mesh = SubResource("SphereMesh_hg6s5")
 skeleton = NodePath("../../CollisionShape3D")
+
+[node name="crosshair" parent="Crosshair/Body" instance=ExtResource("8_rgyib")]
+transform = Transform3D(-8.98703e-09, 0, -0.11105, 0, 0.11503, 0, 0.205599, 0, -4.85417e-09, -8.20756e-05, -0.0148597, -0.0230055)
+visible = false
 
 [node name="capybara" parent="Crosshair/Body" instance=ExtResource("3_g6k8r")]
 transform = Transform3D(-6.77251e-09, -5.78195e-11, -0.15, -0.038823, 0.144889, 1.69701e-09, 0.144889, 0.038823, -6.55671e-09, 0, 0, 0)
