@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b7avn13w71ywo" path="res://platforms/switch.tscn" id="8_wndkh"]
 [ext_resource type="PackedScene" uid="uid://ssrvf2bwr3od" path="res://platforms/energy.tscn" id="12_0vv12"]
 
-[node name="BaseLevel" instance=ExtResource("1_46lwt")]
+[node name="BaseLevel2" instance=ExtResource("1_46lwt")]
 metadata/name = "Level 1"
 
 [node name="DirectionalLight3D" parent="." index="0"]

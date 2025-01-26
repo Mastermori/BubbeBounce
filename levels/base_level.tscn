@@ -19,7 +19,7 @@ sky = SubResource("Sky_hjsbj")
 tonemap_mode = 2
 glow_enabled = true
 
-[node name="BaseLevel" type="Node3D"]
+[node name="BaseLevel2" type="Node3D"]
 script = ExtResource("1_ew5uy")
 metadata/name = ""
 
