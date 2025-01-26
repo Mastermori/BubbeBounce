@@ -5,6 +5,7 @@ extends Node3D
 @onready var bubbles: Node3D = $Bubbles
 @onready var initial_player_position: Vector3 = $Player.position
 @onready var endPopup: GameEndPopup = $GameEndPopup
+@onready var timer: Timer = $Timer
 
 var gameOver: bool = false
 
@@ -23,7 +24,13 @@ func finish(win: bool)-> void:
 		return
 	gameOver = true
 	get_tree().paused = true
+	if(!win):
+		timer.start()
+		return
 	endPopup.show_game_end(win)
+
+func open_fail_popup():
+	endPopup.show_game_end(false)
 	
 func restart_level() -> void:
 	Globals.scene_manager.reload_scene()

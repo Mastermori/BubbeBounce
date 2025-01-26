@@ -15,11 +15,15 @@ var has_level_started: bool = false
 @onready var mesh: MeshInstance3D = $Body/MeshInstance3D
 @onready var bounce_cooldown: Timer = $BounceCooldown
 @onready var camera: PlayerCamera = $Camera3D
-@onready var capybara: Node3D = $Body/capybara
-@onready var trail: Trail3D = $Body/capybara/Trail3D
+@onready var capybara: Node3D = $"Body/capybara_dying_anim(1)"
+@onready var trail: Trail3D = $"Body/capybara_dying_anim(1)/Trail3D"
+@onready var bubble_gun = $BubbleGun
+@onready var death_sound = $AudioStreamPlayer3D
 
 func _ready() -> void:
 	Globals.player = self
+	mesh.visible = true
+	bubble_gun.visible = true
 
 func _on_body_entered(body) -> void:
 	if not bounce_cooldown.is_stopped():
@@ -79,6 +83,13 @@ func hit_bubble(bubble: Bubble, collision: KinematicCollision3D) -> void:
 func die() -> void:
 	Globals.current_level.finish(false)
 	velocity = Vector3.ZERO
+	var animation_player = capybara.get_node("AnimationPlayer")  # Adjust path if necessary      
+	animation_player.play("T-Pose")  # Play the "t-pose" animation
+	mesh.visible = false
+	death_sound.play( )
+	bubble_gun.visible = false
+	
+	
 
 # Probably not supposed to be here
 func activate_grativitation(grav_strengh: float = .4) -> void:

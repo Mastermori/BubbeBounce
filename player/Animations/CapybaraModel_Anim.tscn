@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://ftnx7h7btdgs"]
+
+[ext_resource type="PackedScene" uid="uid://dpx7vk8i4h17u" path="res://player/Animations/capybara_dying_anim(1).glb" id="1_b57wu"]
+
+[node name="capybara_dying_anim(1)" instance=ExtResource("1_b57wu")]
+process_mode = 3
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/1/rotation = Quaternion(-0.0074018, 0.00940291, -0.819412, 0.573079)
+bones/3/rotation = Quaternion(0.00303027, 0.00717175, 0.828807, 0.55948)
+bones/5/rotation = Quaternion(0.20395, -0.0129992, 0.000242172, 0.978895)
+bones/9/rotation = Quaternion(0.00467698, -0.0187643, 0.8976, -0.440386)
+bones/11/rotation = Quaternion(-0.0119935, 0.00353944, 0.897565, 0.440705)
+
+[node name="AnimationPlayer" parent="." index="1"]
+process_mode = 3
