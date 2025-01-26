@@ -47,10 +47,4 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 [node name="GameEndPopup" parent="." instance=ExtResource("5_46036")]
 visible = false
 
-[node name="WinContainer" parent="GameEndPopup/Content" index="0"]
-visible = false
-
-[node name="LoseContainer" parent="GameEndPopup/Content" index="1"]
-visible = false
-
 [editable path="GameEndPopup"]

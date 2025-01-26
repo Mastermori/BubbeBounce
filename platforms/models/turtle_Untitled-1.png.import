@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://h38cuawrpgh3"
 path.s3tc="res://.godot/imported/turtle_Untitled-1.png-1af425ea43b8f8948e9c2cea8181eb9c.s3tc.ctex"
+path.etc2="res://.godot/imported/turtle_Untitled-1.png-1af425ea43b8f8948e9c2cea8181eb9c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://platforms/models/turtle_Untitled-1.png"
-dest_files=["res://.godot/imported/turtle_Untitled-1.png-1af425ea43b8f8948e9c2cea8181eb9c.s3tc.ctex"]
+dest_files=["res://.godot/imported/turtle_Untitled-1.png-1af425ea43b8f8948e9c2cea8181eb9c.s3tc.ctex", "res://.godot/imported/turtle_Untitled-1.png-1af425ea43b8f8948e9c2cea8181eb9c.etc2.ctex"]
 
 [params]
 

@@ -1,15 +1,13 @@
 class_name GameEndPopup
 extends Control
 
-@onready var content: Control = $Content
+@onready var winContent: Control = $WinContent
+@onready var winBackToMenuButton: TextureButton = $WinContent/HBoxContainer/BackToMenuButton
+@onready var nextLevelButton: TextureButton = $WinContent/HBoxContainer/NextLevelButton
 
-@onready var winContent: Control = $Content/WinContainer
-@onready var winBackToMenuButton: Button = $Content/WinContainer/BackToMenuButton
-@onready var nextLevelButton: Button = $Content/WinContainer/NextLevelButton
-
-@onready var loseContent: Control = $Content/LoseContainer
-@onready var loseBackToMenuButton: Button = $Content/LoseContainer/BackToMenuButton
-@onready var tryAgainButton: Button = $Content/LoseContainer/TryAgainButton	
+@onready var loseContent: Control = $LoseContent
+@onready var loseBackToMenuButton: TextureButton = $LoseContent/HBoxContainer/BackToMenuButton
+@onready var tryAgainButton: TextureButton = $LoseContent/HBoxContainer/TryAgainButton
 
 @onready var _game_end_emitter: AudioStreamPlayer3D = $game_end_emitter
 
