@@ -1,49 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyaunuim2ajhg"]
+[gd_scene load_steps=5 format=3 uid="uid://dlvbgyt6wh745"]
 
-[ext_resource type="PackedScene" uid="uid://cscpcll7v3oqy" path="res://levels/base_level.tscn" id="1_088yb"]
-[ext_resource type="PackedScene" uid="uid://caplnvsjfu7u5" path="res://platforms/marker.tscn" id="2_8vyl6"]
-[ext_resource type="PackedScene" uid="uid://c8unmwkipdmt6" path="res://platforms/curry.tscn" id="3_8vyl6"]
-[ext_resource type="PackedScene" uid="uid://c32lu1vox76uo" path="res://platforms/arrow_pink.glb" id="4_om2h0"]
+[ext_resource type="PackedScene" uid="uid://cscpcll7v3oqy" path="res://levels/base_level.tscn" id="1_ds2gi"]
+[ext_resource type="PackedScene" uid="uid://caplnvsjfu7u5" path="res://platforms/marker.tscn" id="2_t2o6v"]
+[ext_resource type="PackedScene" uid="uid://c8unmwkipdmt6" path="res://platforms/curry.tscn" id="3_ar1xo"]
+[ext_resource type="PackedScene" uid="uid://c32lu1vox76uo" path="res://platforms/arrow_pink.glb" id="4_y8vos"]
 
-[node name="BaseLevel" instance=ExtResource("1_088yb")]
+[node name="BaseLevel" instance=ExtResource("1_ds2gi")]
 
-[node name="Marker" parent="Obstacles" index="0" instance=ExtResource("2_8vyl6")]
+[node name="Marker" parent="Obstacles" index="0" instance=ExtResource("2_t2o6v")]
 transform = Transform3D(-4.37114e-08, 1, 0, -0.349455, -1.52752e-08, -0.936953, -0.936953, -4.09555e-08, 0.349455, 9.04373, 5.49021, 0.0245283)
 
-[node name="Marker2" parent="Obstacles" index="1" instance=ExtResource("2_8vyl6")]
+[node name="Marker2" parent="Obstacles" index="1" instance=ExtResource("2_t2o6v")]
 transform = Transform3D(-4.37114e-08, 1, 0, -0.349455, -1.52752e-08, -0.936953, -0.936953, -4.09555e-08, 0.349455, 9.86961, 0.858921, 0.0245283)
 
-[node name="Marker3" parent="Obstacles" index="2" instance=ExtResource("2_8vyl6")]
+[node name="Marker3" parent="Obstacles" index="2" instance=ExtResource("2_t2o6v")]
 transform = Transform3D(-4.37114e-08, 1, 0, -0.349455, -1.52752e-08, -0.936953, -0.936953, -4.09555e-08, 0.349455, 14.2592, 0.858921, 0.0245283)
 
-[node name="Marker4" parent="Obstacles" index="3" instance=ExtResource("2_8vyl6")]
+[node name="Marker4" parent="Obstacles" index="3" instance=ExtResource("2_t2o6v")]
 transform = Transform3D(-4.37114e-08, 1, 0, -0.349455, -1.52752e-08, -0.936953, -0.936953, -4.09555e-08, 0.349455, 18.6581, 0.858921, 0.0245283)
 
-[node name="Marker5" parent="Obstacles" index="4" instance=ExtResource("2_8vyl6")]
+[node name="Marker5" parent="Obstacles" index="4" instance=ExtResource("2_t2o6v")]
 transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 21.0926, 2.80212, 0.0245283)
 
-[node name="Marker6" parent="Obstacles" index="5" instance=ExtResource("2_8vyl6")]
+[node name="Marker6" parent="Obstacles" index="5" instance=ExtResource("2_t2o6v")]
 transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 21.0707, 7.15793, 0.0245283)
 
-[node name="Marker7" parent="Obstacles" index="6" instance=ExtResource("2_8vyl6")]
+[node name="Marker7" parent="Obstacles" index="6" instance=ExtResource("2_t2o6v")]
 transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 21.0489, 11.5465, 0.0245283)
 
-[node name="Marker8" parent="Obstacles" index="7" instance=ExtResource("2_8vyl6")]
+[node name="Marker8" parent="Obstacles" index="7" instance=ExtResource("2_t2o6v")]
 transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 20.0336, 11.5356, 0.0245283)
 
-[node name="Marker9" parent="Obstacles" index="8" instance=ExtResource("2_8vyl6")]
+[node name="Marker9" parent="Obstacles" index="8" instance=ExtResource("2_t2o6v")]
 transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 19.0184, 11.5465, 0.0245283)
 
-[node name="Marker10" parent="Obstacles" index="9" instance=ExtResource("2_8vyl6")]
+[node name="Marker10" parent="Obstacles" index="9" instance=ExtResource("2_t2o6v")]
 transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 18.0686, 11.5465, 0.0245283)
 
-[node name="Marker11" parent="Obstacles" index="10" instance=ExtResource("2_8vyl6")]
+[node name="Marker11" parent="Obstacles" index="10" instance=ExtResource("2_t2o6v")]
 transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 17.0861, 11.5465, 0.0245283)
 
-[node name="Marker12" parent="Obstacles" index="11" instance=ExtResource("2_8vyl6")]
+[node name="Marker12" parent="Obstacles" index="11" instance=ExtResource("2_t2o6v")]
 transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 16.0926, 11.5465, 0.0245283)
 
-[node name="Marker13" parent="Obstacles" index="12" instance=ExtResource("2_8vyl6")]
+[node name="Marker13" parent="Obstacles" index="12" instance=ExtResource("2_t2o6v")]
 transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 7.13675, 3.06587, 0.0245283)
 
 [node name="Player" parent="." index="4"]
@@ -52,13 +52,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.36506, 8.85975, 0)
 [node name="Goal" parent="." index="5"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.69912, 3.29031, 0)
 
-[node name="curry" parent="." index="7" instance=ExtResource("3_8vyl6")]
+[node name="curry" parent="." index="7" instance=ExtResource("3_ar1xo")]
 transform = Transform3D(-43.6404, 0.00327066, 0.0110063, 0, 0.0803033, -41.6356, -0.143196, -0.996765, -3.35429, 13.6278, -30.9841, -6.78921)
 
-[node name="arrow_pink2" parent="." index="8" instance=ExtResource("4_om2h0")]
+[node name="arrow_pink2" parent="." index="8" instance=ExtResource("4_y8vos")]
 transform = Transform3D(-0.655395, 0.0013673, 0, -0.00123538, -0.725379, 0, 0, 0, 1, 18.6591, 3.34444, -2.10175)
 
-[node name="arrow_pink3" parent="." index="9" instance=ExtResource("4_om2h0")]
+[node name="arrow_pink3" parent="." index="9" instance=ExtResource("4_y8vos")]
 transform = Transform3D(0.00653145, 0.725344, 0, -0.655363, 0.0072289, 0, 0, 0, 1, 14.1738, 11.0528, -2.10175)
 
 [editable path="GameEndPopup"]

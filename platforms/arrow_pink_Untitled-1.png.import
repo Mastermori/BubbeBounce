@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo1767id0tnr7"
-path.s3tc="res://.godot/imported/arrow_white_Untitled-1.png-5bba74c46a3136e40c090077af98fff4.s3tc.ctex"
+uid="uid://btf0sekxbvm8p"
+path.s3tc="res://.godot/imported/arrow_pink_Untitled-1.png-53797492cec15a59011443e2787ef756.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://platforms/models/arrow_white_Untitled-1.png"
-dest_files=["res://.godot/imported/arrow_white_Untitled-1.png-5bba74c46a3136e40c090077af98fff4.s3tc.ctex"]
+source_file="res://platforms/arrow_pink_Untitled-1.png"
+dest_files=["res://.godot/imported/arrow_pink_Untitled-1.png-53797492cec15a59011443e2787ef756.s3tc.ctex"]
 
 [params]
 
