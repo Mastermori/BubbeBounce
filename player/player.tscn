@@ -175,10 +175,10 @@ skeleton = NodePath("../../CollisionShape3D")
 
 [node name="crosshair" parent="Crosshair/Body" instance=ExtResource("8_rgyib")]
 transform = Transform3D(-8.98703e-09, 0, -0.11105, 0, 0.11503, 0, 0.205599, 0, -4.85417e-09, -8.20756e-05, -0.0148597, -0.0230055)
-visible = false
 
 [node name="capybara" parent="Crosshair/Body" instance=ExtResource("3_g6k8r")]
 transform = Transform3D(-6.77251e-09, -5.78195e-11, -0.15, -0.038823, 0.144889, 1.69701e-09, 0.144889, 0.038823, -6.55671e-09, 0, 0, 0)
+visible = false
 
 [node name="Trail3D" type="MeshInstance3D" parent="Crosshair/Body/capybara"]
 transform = Transform3D(-1.09278e-07, -0.647048, 2.41481, 1.54228e-17, 2.41481, 0.647048, -2.5, 2.82833e-08, -1.05555e-07, 0.0467681, -0.174577, -2.04407e-09)
