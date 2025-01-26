@@ -140,4 +140,7 @@ transform = Transform3D(0.916412, 0.400237, 0, -0.400237, 0.916412, 0, 0, 0, 1, 
 [node name="arrow_white3" parent="." index="10" instance=ExtResource("5_55r7x")]
 transform = Transform3D(0.736546, -0.676388, 0, 0.676388, 0.736546, 0, 0, 0, 1, 2.33059, 5.92852, -3.10778)
 
+[node name="arrow_white4" parent="." index="11" instance=ExtResource("5_55r7x")]
+transform = Transform3D(0.988826, -0.10337, 0.107416, 0.101529, 0.994579, 0.0224813, -0.109158, -0.0113243, 0.99396, 7.75517, 23.2434, -3.10778)
+
 [editable path="GameEndPopup"]
