@@ -4,6 +4,7 @@ extends Control
 @onready var winContent: Control = $WinContent
 @onready var winBackToMenuButton: TextureButton = $WinContent/HBoxContainer/BackToMenuButton
 @onready var nextLevelButton: TextureButton = $WinContent/HBoxContainer/NextLevelButton
+@onready var bubbleCounterText: Label = $WinContent/BubbleCounter
 
 @onready var loseContent: Control = $LoseContent
 @onready var loseBackToMenuButton: TextureButton = $LoseContent/HBoxContainer/BackToMenuButton
@@ -38,6 +39,7 @@ func _exit_tree() -> void:
 func show_game_end(win: bool) -> void:
 	visible = true
 	if win:
+		bubbleCounterText.text = str(Globals.current_level.bubbleCounter)
 		winContent.visible = true
 		loseContent.visible = false
 		winBackToMenuButton.pressed.connect(_on_back_to_menu)

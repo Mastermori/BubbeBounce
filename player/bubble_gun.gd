@@ -44,6 +44,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 		var bubble: Bubble = bubble_scene.instantiate()
 		Globals.current_level.bubbles.add_child(bubble)
+		Globals.current_level.bubbleCounter += 1
 		bubble.global_position = get_collision_point()
 		print(bubble.global_position)
 		bubble.start_growing()

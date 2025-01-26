@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://d04wc2xd0evxd"]
+[gd_scene load_steps=27 format=3 uid="uid://d04wc2xd0evxd"]
 
 [ext_resource type="Script" uid="uid://d3a6wdn8vtdyi" path="res://Ui/Popups/game_end_popup.gd" id="1_yfwdu"]
 [ext_resource type="Texture2D" uid="uid://c7tco241pp6wg" path="res://Art/BubbeBounce_WinScreen.png" id="2_bl6he"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://djwg7hkeuppk3" path="res://Ui/Popups/LoseWinSounds/Happy_Capybara_01-250125_2130-001.wav" id="6_ytwqb"]
 [ext_resource type="Texture2D" uid="uid://bs662dgjwc7q1" path="res://Art/BubbeBounce_LoseScreen.png" id="7_b32i0"]
 [ext_resource type="AudioStream" uid="uid://c1bewv51nrg7f" path="res://Ui/Popups/LoseWinSounds/Happy_Capybara_01-250125_2130-002.wav" id="7_exlv5"]
+[ext_resource type="FontFile" uid="uid://bg6ycybq3m4je" path="res://Art/Font/GochiHand-Regular.ttf" id="7_f5j8o"]
 [ext_resource type="AudioStream" uid="uid://xd1djx2phhtd" path="res://Ui/Popups/LoseWinSounds/Happy_Capybara_01-250125_2130-003.wav" id="8_6df44"]
 [ext_resource type="AudioStream" uid="uid://bgmavau55mcuu" path="res://Ui/Popups/LoseWinSounds/Happy_Capybara_01-250125_2130-004.wav" id="9_mgjmm"]
 [ext_resource type="AudioStream" uid="uid://csmnxufirlokc" path="res://Ui/Popups/LoseWinSounds/Happy_Capybara_01-250125_2130-005.wav" id="10_ax28a"]
@@ -22,6 +23,11 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bl6he"]
 texture = ExtResource("2_bl6he")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ert4m"]
+font = ExtResource("7_f5j8o")
+font_size = 60
+font_color = Color(0.87451, 0.368627, 0.54902, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f5j8o"]
 texture = ExtResource("7_b32i0")
@@ -62,7 +68,6 @@ grow_vertical = 2
 script = ExtResource("1_yfwdu")
 
 [node name="WinContent" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -96,6 +101,23 @@ texture_hover = ExtResource("4_ax28a")
 layout_mode = 2
 texture_normal = ExtResource("5_eucqn")
 texture_hover = ExtResource("6_xq8sd")
+
+[node name="BubbleCounter" type="Label" parent="WinContent"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.856481
+anchor_top = 0.28125
+anchor_right = 0.856481
+anchor_bottom = 0.349306
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "100"
+label_settings = SubResource("LabelSettings_ert4m")
+metadata/_edit_use_anchors_ = true
 
 [node name="LoseContent" type="Panel" parent="."]
 visible = false
