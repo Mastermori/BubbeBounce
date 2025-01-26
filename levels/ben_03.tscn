@@ -8,46 +8,43 @@
 [node name="BaseLevel" instance=ExtResource("1_088yb")]
 
 [node name="Marker" parent="Obstacles" index="0" instance=ExtResource("2_8vyl6")]
-transform = Transform3D(-4.37114e-08, 1, 0, -0.349455, -1.52752e-08, -0.936953, -0.936953, -4.09555e-08, 0.349455, 9.04373, 5.49021, 0.0245283)
+transform = Transform3D(-4.37114e-08, 1, 0, 0.142301, 6.2202e-09, 0.989823, 0.989823, 4.32666e-08, -0.142301, 3.27883, 5.49021, 0.0245283)
 
-[node name="Marker2" parent="Obstacles" index="1" instance=ExtResource("2_8vyl6")]
+[node name="Marker9" parent="Obstacles" index="1" instance=ExtResource("2_8vyl6")]
+transform = Transform3D(0.100897, 0.705167, 0.701826, 0.100346, -0.709042, 0.69799, 0.989823, 4.32666e-08, -0.142301, -0.641182, 7.08651, 0.0245283)
+
+[node name="Marker8" parent="Obstacles" index="2" instance=ExtResource("2_8vyl6")]
+transform = Transform3D(-4.37114e-08, 1, 0, -0.349455, -1.52752e-08, -0.936953, -0.936953, -4.09555e-08, 0.349455, 7.73761, 5.49021, 0.0245283)
+
+[node name="Marker2" parent="Obstacles" index="3" instance=ExtResource("2_8vyl6")]
 transform = Transform3D(-4.37114e-08, 1, 0, -0.349455, -1.52752e-08, -0.936953, -0.936953, -4.09555e-08, 0.349455, 9.86961, 0.858921, 0.0245283)
 
-[node name="Marker3" parent="Obstacles" index="2" instance=ExtResource("2_8vyl6")]
-transform = Transform3D(-4.37114e-08, 1, 0, -0.349455, -1.52752e-08, -0.936953, -0.936953, -4.09555e-08, 0.349455, 14.2592, 0.858921, 0.0245283)
+[node name="Marker3" parent="Obstacles" index="4" instance=ExtResource("2_8vyl6")]
+transform = Transform3D(-4.37114e-08, 1, 0, 0.627474, 2.74277e-08, -0.778637, -0.778637, -3.40353e-08, -0.627474, 14.2592, 0.858921, 0.0245283)
 
-[node name="Marker4" parent="Obstacles" index="3" instance=ExtResource("2_8vyl6")]
+[node name="Marker4" parent="Obstacles" index="5" instance=ExtResource("2_8vyl6")]
 transform = Transform3D(-4.37114e-08, 1, 0, -0.349455, -1.52752e-08, -0.936953, -0.936953, -4.09555e-08, 0.349455, 18.6581, 0.858921, 0.0245283)
 
-[node name="Marker5" parent="Obstacles" index="4" instance=ExtResource("2_8vyl6")]
-transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 21.0926, 2.80212, 0.0245283)
+[node name="Marker5" parent="Obstacles" index="6" instance=ExtResource("2_8vyl6")]
+transform = Transform3D(-0.349455, -5.89866e-08, -0.936953, 5.89865e-08, -1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 21.0926, 2.43841, 0.0245283)
 
-[node name="Marker6" parent="Obstacles" index="5" instance=ExtResource("2_8vyl6")]
-transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 21.0707, 7.15793, 0.0245283)
+[node name="Marker6" parent="Obstacles" index="7" instance=ExtResource("2_8vyl6")]
+transform = Transform3D(0.106906, 4.37608e-08, -0.994269, -2.84362e-08, 1, 4.09555e-08, 0.994269, 2.38949e-08, 0.106906, 21.0707, 7.15793, 0.0245283)
 
-[node name="Marker7" parent="Obstacles" index="6" instance=ExtResource("2_8vyl6")]
+[node name="Marker7" parent="Obstacles" index="8" instance=ExtResource("2_8vyl6")]
 transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 21.0489, 11.5465, 0.0245283)
 
-[node name="Marker8" parent="Obstacles" index="7" instance=ExtResource("2_8vyl6")]
-transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 20.0336, 11.5356, 0.0245283)
+[node name="Marker11" parent="Obstacles" index="9" instance=ExtResource("2_8vyl6")]
+transform = Transform3D(0.349472, 4.83108e-08, -0.936947, -2.84362e-08, 1, 4.09555e-08, 0.936947, 1.23304e-08, 0.349472, 5.0462, 3.04061, 0.0245283)
 
-[node name="Marker9" parent="Obstacles" index="8" instance=ExtResource("2_8vyl6")]
-transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 19.0184, 11.5465, 0.0245283)
+[node name="Marker12" parent="Obstacles" index="10" instance=ExtResource("2_8vyl6")]
+transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 6.09688, 3.05793, 0.0245283)
 
-[node name="Marker10" parent="Obstacles" index="9" instance=ExtResource("2_8vyl6")]
-transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 18.0686, 11.5465, 0.0245283)
-
-[node name="Marker11" parent="Obstacles" index="10" instance=ExtResource("2_8vyl6")]
-transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 17.0861, 11.5465, 0.0245283)
-
-[node name="Marker12" parent="Obstacles" index="11" instance=ExtResource("2_8vyl6")]
-transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 16.0926, 11.5465, 0.0245283)
-
-[node name="Marker13" parent="Obstacles" index="12" instance=ExtResource("2_8vyl6")]
-transform = Transform3D(0.349455, -2.84362e-08, 0.936953, -2.84362e-08, 1, 4.09555e-08, -0.936953, -4.09555e-08, 0.349455, 7.13675, 3.06587, 0.0245283)
+[node name="Marker13" parent="Obstacles" index="11" instance=ExtResource("2_8vyl6")]
+transform = Transform3D(-0.298824, -4.75816e-08, 0.954308, -2.84362e-08, 1, 4.09555e-08, -0.954308, -1.48984e-08, -0.298824, 7.13675, 3.06587, 0.0245283)
 
 [node name="Player" parent="." index="4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.36506, 8.85975, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40226, 9.64758, 0)
 
 [node name="Goal" parent="." index="5"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.69912, 3.29031, 0)
@@ -59,6 +56,15 @@ transform = Transform3D(-43.6404, 0.00327066, 0.0110063, 0, 0.0803033, -41.6356,
 transform = Transform3D(-0.655395, 0.0013673, 0, -0.00123538, -0.725379, 0, 0, 0, 1, 18.6591, 3.34444, -2.10175)
 
 [node name="arrow_pink3" parent="." index="9" instance=ExtResource("4_om2h0")]
-transform = Transform3D(0.00653145, 0.725344, 0, -0.655363, 0.0072289, 0, 0, 0, 1, 14.1738, 11.0528, -2.10175)
+transform = Transform3D(0.00653145, 0.725344, 0, -0.655363, 0.0072289, 0, 0, 0, 1, 10.9957, 10.3079, -2.10175)
+
+[node name="arrow_pink4" parent="." index="10" instance=ExtResource("4_om2h0")]
+transform = Transform3D(0.177876, 0.208848, 0, -0.147419, 0.251997, 0, 0, 0, 0.221047, 8.08322, 4.51744, -0.882133)
+
+[node name="arrow_pink5" parent="." index="11" instance=ExtResource("4_om2h0")]
+transform = Transform3D(0.203692, -0.154425, 0, 0.109004, 0.28857, 0, 0, 0, 0.221047, 8.08322, 2.48645, -0.886909)
+
+[node name="arrow_pink6" parent="." index="12" instance=ExtResource("4_om2h0")]
+transform = Transform3D(-0.186079, -0.193973, 0, 0.136919, -0.263618, 0, 0, 0, 0.221047, 11.4713, 2.16823, -0.93228)
 
 [editable path="GameEndPopup"]
