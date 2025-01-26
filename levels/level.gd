@@ -9,6 +9,7 @@ extends Node3D
 var gameOver: bool = false
 
 func _ready() -> void:
+	gameOver = false
 	get_tree().paused = false
 	Globals.current_level = self
 	endPopup.init(restart_level)
