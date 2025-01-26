@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d284tnwpobnj4"]
+[gd_scene load_steps=27 format=3 uid="uid://d284tnwpobnj4"]
 
 [ext_resource type="Script" uid="uid://m3pcsmljt22v" path="res://player/player.gd" id="1_rkbax"]
 [ext_resource type="Script" uid="uid://b4rqce6gip4os" path="res://player/trajectory_visualizer.gd" id="2_boad6"]
@@ -28,23 +28,23 @@ shader_parameter/outline_ratio = 1.0
 shader_parameter/noise_speed = 0.2
 shader_parameter/noise_scale = 0.5
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mqji"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgyib"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_rpqi1"]
-material = SubResource("StandardMaterial3D_3mqji")
+material = SubResource("StandardMaterial3D_rgyib")
 
 [sub_resource type="Gradient" id="Gradient_yw30f"]
 interpolation_mode = 2
 offsets = PackedFloat32Array(0, 0.163934, 0.344262, 0.532787, 0.778689, 1)
 colors = PackedColorArray(0.1152, 0.72, 0.44784, 0, 0.3478, 0.74, 0.439313, 0.517647, 0.75, 0.612, 0.2325, 0.631373, 0.84, 0.294, 0.4487, 1, 0.573425, 0.244598, 0.708293, 1, 0.578374, 0.378111, 0.995466, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_qjkh3"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hg6s5"]
 gradient = SubResource("Gradient_yw30f")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g6k8r"]
 transparency = 1
 shading_mode = 0
-albedo_texture = SubResource("GradientTexture1D_qjkh3")
+albedo_texture = SubResource("GradientTexture1D_hg6s5")
 
 [sub_resource type="Curve" id="Curve_yw30f"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.49643, 0.0, 0, 0]
@@ -52,6 +52,40 @@ point_count = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_boad6"]
 size = Vector3(11.7846, 9.96216, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_boad6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rgyib"]
+render_priority = 0
+shader = ExtResource("2_qjkh3")
+shader_parameter/fuwafuwa_speed = 1.5
+shader_parameter/fuwafuwa_size = 0.05
+shader_parameter/outline_color = Color(0.45, 0.7, 1, 1)
+shader_parameter/outline_ratio = 1.0
+shader_parameter/noise_speed = 0.2
+shader_parameter/noise_scale = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mqji"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_hg6s5"]
+material = SubResource("StandardMaterial3D_3mqji")
+
+[sub_resource type="Gradient" id="Gradient_8t03j"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.163934, 0.344262, 0.532787, 0.778689, 1)
+colors = PackedColorArray(0.1152, 0.72, 0.44784, 0, 0.3478, 0.74, 0.439313, 0.517647, 0.75, 0.612, 0.2325, 0.631373, 0.84, 0.294, 0.4487, 1, 0.573425, 0.244598, 0.708293, 1, 0.578374, 0.378111, 0.995466, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qjkh3"]
+gradient = SubResource("Gradient_8t03j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ieo8"]
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("GradientTexture1D_qjkh3")
+
+[sub_resource type="Curve" id="Curve_ebec5"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -2.49643, 0.0, 0, 0]
+point_count = 2
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
@@ -100,9 +134,6 @@ smoothing_iterations = 3
 axis = 2
 metadata/_custom_type_script = ExtResource("4_yw30f")
 
-[node name="BubbleGun" parent="." instance=ExtResource("2_rkbax")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465172, 0, 0)
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.994609, 0.103695, 0, -0.103695, 0.994609, 0, 0.301776, 6.83131)
 current = true
@@ -119,6 +150,44 @@ collision_mask = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/Cube_026/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.336761, -2.11939, -0.570175)
 shape = SubResource("BoxShape3D_boad6")
+
+[node name="BubbleGun" parent="." instance=ExtResource("2_rkbax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465172, 0, 0)
+
+[node name="Crosshair" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.465172, 0, 0)
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crosshair"]
+shape = SubResource("SphereShape3D_boad6")
+
+[node name="Body" type="Node3D" parent="Crosshair"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Crosshair/Body"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_rgyib")
+transparency = 1.0
+mesh = SubResource("SphereMesh_hg6s5")
+skeleton = NodePath("../../CollisionShape3D")
+
+[node name="capybara" parent="Crosshair/Body" instance=ExtResource("3_g6k8r")]
+transform = Transform3D(-6.77251e-09, -5.78195e-11, -0.15, -0.038823, 0.144889, 1.69701e-09, 0.144889, 0.038823, -6.55671e-09, 0, 0, 0)
+
+[node name="Trail3D" type="MeshInstance3D" parent="Crosshair/Body/capybara"]
+transform = Transform3D(-1.09278e-07, -0.647048, 2.41481, 1.54228e-17, 2.41481, 0.647048, -2.5, 2.82833e-08, -1.05555e-07, 0.0467681, -0.174577, -2.04407e-09)
+visible = false
+material_override = SubResource("StandardMaterial3D_2ieo8")
+skeleton = NodePath("../../..")
+script = ExtResource("4_yw30f")
+emit = false
+lifetime = 0.7
+base_width = 0.4
+width_profile = SubResource("Curve_ebec5")
+smoothing_iterations = 3
+axis = 2
+metadata/_custom_type_script = ExtResource("4_yw30f")
 
 [node name="BounceCooldown" type="Timer" parent="."]
 wait_time = 0.2

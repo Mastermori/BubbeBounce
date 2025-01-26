@@ -6,6 +6,8 @@ extends RayCast3D
 
 @onready var camera: Camera3D = $"../Camera3D"
 
+@onready var crosshair: Area3D = $"../Crosshair"
+
 @onready var player: Player = owner
 @onready var initial_position := position
 @onready var dropPlane := Plane(Vector3(0, 0, 1), player.position.z)
@@ -19,6 +21,11 @@ func _physics_process(delta: float) -> void:
 	var direction2D := get_mouse_direction()
 	rotation = Vector3(0, 0, direction2D.angle())
 	position = initial_position.rotated(Vector3(0, 0, 1), direction2D.angle())
+	if not is_colliding():
+		return
+	crosshair.global_position.x = get_collision_point().x
+	crosshair.global_position.y = get_collision_point().y
+	
 
 func get_mouse_direction() -> Vector2:
 	var mouse_position2D := get_viewport().get_mouse_position()
@@ -36,6 +43,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		var bubble: Bubble = bubble_scene.instantiate()
 		Globals.current_level.bubbles.add_child(bubble)
 		bubble.global_position = get_collision_point()
+		print(bubble.global_position)
 		bubble.start_growing()
 		_playShootSound()
 
