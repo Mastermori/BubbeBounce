@@ -51,6 +51,7 @@ func _on_body_entered(body: PhysicsBody3D) -> void:
 	await get_tree().process_frame
 	await get_tree().process_frame
 	collision_shape_3d.set_deferred("disabled", true)
+	on_hit_by_player()
 
 func on_hit_by_player() -> void:
 	if fade_timer.time_left > fade_timer_after_hit:

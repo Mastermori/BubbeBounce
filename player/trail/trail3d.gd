@@ -110,7 +110,6 @@ func _render_realtime() -> void:
 
 func _render_geometry(source: Array) -> void:
 	var points_count = source.size()
-	print("Source point size: ", source.size())
 	if points_count < 2:
 		return
 
