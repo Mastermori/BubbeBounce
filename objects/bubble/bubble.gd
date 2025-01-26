@@ -36,6 +36,7 @@ func start_growing(start_size: float = .3) -> void:
 	self.size = start_size
 	scale = Vector3.ONE * base_size * start_size
 	current = true
+	collision_shape_3d.set_deferred("disabled", false)
 	_sound_emitter.start_grow_sound()
 
 func finish_growing() -> void:

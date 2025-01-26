@@ -45,7 +45,6 @@ func _process(delta: float) -> void:
 	var mouse_position_3D:Vector3 = result.get("position", end)
 	var local_mouse_position: Vector3 = player.to_local(mouse_position_3D)
 	local_mouse_position.z = 0.0
-	print(local_mouse_position)
 	
 	var midpoint: Vector3 = (player.position + mouse_position_3D) / 2
 	# Calculate the midpoint between player and mouse position
