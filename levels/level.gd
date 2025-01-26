@@ -22,10 +22,10 @@ func finish(win: bool)-> void:
 	if gameOver:
 		return
 	gameOver = true
+	get_tree().paused = true
 	endPopup.show_game_end(win)
 	
 func restart_level() -> void:
-	gameOver = false
 	Globals.scene_manager.reload_scene()
 	
 	

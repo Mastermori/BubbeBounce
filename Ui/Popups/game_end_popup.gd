@@ -22,16 +22,16 @@ func init(try_again_callback: Callable) -> void:
 	self.try_again_callback = try_again_callback
 
 func _disconnect_listeners() -> void:
-	if winBackToMenuButton.pressed.has_connections():
+	if winBackToMenuButton.pressed.is_connected(_on_back_to_menu):
 		winBackToMenuButton.pressed.disconnect(_on_back_to_menu)
 	
-	if nextLevelButton.pressed.has_connections():
+	if nextLevelButton.pressed.is_connected(_on_next_level):
 		nextLevelButton.pressed.disconnect(_on_next_level)
 	
-	if loseBackToMenuButton.pressed.has_connections():
+	if loseBackToMenuButton.pressed.is_connected(_on_back_to_menu):
 		loseBackToMenuButton.pressed.disconnect(_on_back_to_menu)
 	
-	if tryAgainButton.pressed.has_connections():
+	if tryAgainButton.pressed.is_connected(_on_try_again):
 		tryAgainButton.pressed.disconnect(_on_try_again)
 
 func _exit_tree() -> void:
@@ -67,7 +67,6 @@ func _on_next_level() -> void:
 	Globals.scene_manager.next_level()
 
 func _on_try_again() -> void:
-	_disconnect_listeners()
 	visible = false
 	loseContent.visible = false
 	winContent.visible = false

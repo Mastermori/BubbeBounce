@@ -11,7 +11,6 @@ extends Control
 
 func open() -> void:
 	visible = true
-
 	level_1_button.pressed.connect(_on_button_pressed.bind(level_1_button))
 	level_2_button.pressed.connect(_on_button_pressed.bind(level_2_button))
 	level_3_button.pressed.connect(_on_button_pressed.bind(level_3_button))
